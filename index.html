@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+window.contextInfo = {"files":[],"materials":[],"crafts":[]};
+document.addEventListener('click', function(e) {
+  var anchor = e.target.closest('a');
+  if (anchor) {
+    var href = anchor.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      var targetId = href.slice(1);
+      if (['collection', 'masterpiece', 'learned', 'reflection'].indexOf(targetId) !== -1) {
+        e.preventDefault();
+        if (window.MLJ && window.MLJ.openDeskObject) {
+          window.MLJ.openDeskObject(targetId);
+        }
+        var desk = document.getElementById('desk');
+        if (desk) desk.scrollIntoView({ behavior: 'smooth' });
+        try { history.replaceState(null, '', '#' + targetId); } catch(err){}
+        return;
+      }
+      var target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        try { history.replaceState(null, '', '#' + targetId); } catch(err){}
+      }
+    }
+  }
+});
+</script>
+<script>document.documentElement.className += ' js';</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17243B">
+<title>My Literary Journey: A Great Books Digital Portfolio</title>
+<meta name="description" content="Angelaica Mae P. Harochoc's Great Books digital portfolio &mdash; seven literary analyses, a favorite masterpiece, learning summary, and personal reflection. University of Nueva Caceres, BSIT 4th Year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MY LITERARY JOURNEY &mdash; ONE SHARED LITERARY WORKSPACE
+   Navy graph desk &middot; warm parchment paper &middot; forest &middot; burgundy &middot; burnt orange
+   ============================================================ */
+:root {
+  --navy: #17243B; --navy-2: #1D2D47; --navy-3: #243A58; --navy-deep: #101A2C;
+  --forest: #243D35; --forest-deep: #192B25;
+  --burgundy: #752F40; --burgundy-deep: #58202F;
+  --orange: #B65B35; --orange-deep: #8A4225;
+  --gold: #C99A36; --gold-soft: #E3C88F; --gold-deep: #8F6C22;
+  --parchment: #D8C5A3; --parchment-2: #E3D2B4; --parchment-3: #C9B491;
+  --ink: #25231F; --ink-80: rgba(37,35,31,.82); --ink-70: rgba(37,35,31,.7);
+  --ink-55: rgba(37,35,31,.56); --ink-40: rgba(37,35,31,.4);
+  --rule: rgba(37,35,31,.2); --rule-soft: rgba(37,35,31,.1);
+  --on: #F2E8D3; --on-85: rgba(242,232,211,.86); --on-70: rgba(242,232,211,.7);
+  --on-55: rgba(242,232,211,.55); --on-40: rgba(242,232,211,.4); --on-25: rgba(242,232,211,.22);
+  --graph: rgba(201,154,54,.085);
+  --serif: 'Cormorant Garamond','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  --sans: 'Inter','Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --hand: 'Caveat','Patrick Hand','Segoe Print','Bradley Hand',cursive;
+  --sh-1: 0 1px 0 rgba(255,255,255,.16) inset,0 10px 22px -16px rgba(3,8,16,.85);
+  --sh-2: 0 2px 4px rgba(3,8,16,.4),0 22px 44px -26px rgba(3,8,16,.95);
+  --sh-3: 0 4px 10px rgba(3,8,16,.45),0 42px 80px -38px rgba(3,8,16,1);
+  --sh-paper: 0 1px 0 rgba(255,255,255,.32) inset,0 18px 34px -22px rgba(4,10,20,.95);
+  --nav-h: 70px; --wrap: 1200px; --ease: cubic-bezier(.22,.68,.35,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.65;color:var(--on);
+  background-color:var(--navy);
+  background-image:linear-gradient(to right,var(--graph) 1px,transparent 1px),linear-gradient(to bottom,var(--graph) 1px,transparent 1px);
+  background-size:28px 28px;background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+[hidden]{display:none!important}
+h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0;letter-spacing:.004em;color:var(--on)}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+a{color:var(--gold-soft);text-decoration-thickness:1px;text-underline-offset:3px}
+ul,ol{margin:0 0 1em;padding-left:1.15em}
+li{margin:.25em 0}
+strong{font-weight:600}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-64px;z-index:200;background:var(--gold);color:#1A1408;padding:11px 18px;border-radius:0 0 4px 4px;font-size:14px;font-weight:600;text-decoration:none;transition:top .18s var(--ease)}
+.skip:focus{top:0}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,3.8vw,36px)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- Typography & Layout ---------- */
+.eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 .75rem;display:flex;align-items:center;gap:.65rem}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold);flex:none;opacity:.8}
+.hand{font-family:var(--hand);font-size:1.5rem;line-height:1.35;color:var(--burgundy);letter-spacing:.01em}
+.lead{font-size:1.06rem;color:var(--on-85)}
+.section{position:relative;padding-block:clamp(44px,6.5vw,78px);scroll-margin-top:calc(var(--nav-h) + 14px)}
+.section--tight{padding-block:clamp(36px,5vw,56px)}
+.section-head{max-width:74ch;margin-bottom:clamp(22px,3.2vw,38px)}
+.section-title{font-size:clamp(2.1rem,4.8vw,3.4rem);letter-spacing:-.015em;color:var(--on)}
+.section-sub{margin-top:.75rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.45;color:var(--on-70)}
+
+/* ---------- Buttons ---------- */
+.btn{--btn-bg:var(--navy-2);--btn-fg:var(--on);--btn-bd:rgba(227,200,146,.42);
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:.82rem 1.25rem;min-height:44px;background:var(--btn-bg);color:var(--btn-fg);
+  border:1px solid var(--btn-bd);border-radius:2px;cursor:pointer;text-decoration:none;text-align:center;
+  transition:transform .2s var(--ease),box-shadow .25s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 10px 20px -16px rgba(3,8,16,.95)}
+.btn:hover{transform:translateY(-1px);border-color:var(--gold);box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 16px 26px -18px rgba(3,8,16,1)}
+.btn:active{transform:translateY(0) scale(.995)}
+.btn--primary{--btn-bg:var(--gold);--btn-fg:#1A1408;--btn-bd:#8F6C22}
+.btn--primary:hover{--btn-bg:#D9AB44;--btn-fg:#151005}
+.btn--forest{--btn-bg:var(--forest);--btn-fg:#F5EBD3;--btn-bd:rgba(227,200,146,.5)}
+.btn--forest:hover{--btn-bg:#2C4B40}
+.btn--burgundy{--btn-bg:var(--burgundy);--btn-fg:#FFF8F0;--btn-bd:var(--burgundy-deep)}
+.btn--burgundy:hover{--btn-bg:#8E394E;--btn-fg:#FFF}
+.btn--ghost{--btn-bg:transparent;--btn-bd:rgba(242,232,211,.32)}
+.btn--ghost:hover{--btn-bg:rgba(242,232,211,.08)}
+.btn--sm{font-size:11.5px;padding:.58rem .85rem;min-height:38px;letter-spacing:.06em}
+.btn--lg{font-size:13.5px;padding:.95rem 1.6rem;min-height:50px}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.btn .arw{font-size:1.05em;line-height:1;transform:translateY(-.5px)}
+
+/* ---------- Sticky Navigation ---------- */
+.nav{position:sticky;top:0;z-index:90;background:rgba(16,26,44,.95);backdrop-filter:blur(9px);
+  border-bottom:1px solid rgba(227,200,146,.2);transition:box-shadow .3s var(--ease)}
+.nav.is-stuck{box-shadow:0 18px 34px -28px rgba(0,0,0,.95)}
+.nav-inner{max-width:var(--wrap);margin-inline:auto;padding:.35rem clamp(16px,3.8vw,36px);min-height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--on);flex:none}
+.brand-mark{width:30px;height:30px;flex:none;color:var(--gold)}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-title{font-family:var(--serif);font-size:1.12rem;font-weight:600}
+.brand-sub{font-size:8.8px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-55);margin-top:2px}
+.nav-menu ul{display:flex;align-items:center;gap:.1rem;list-style:none;margin:0;padding:0}
+.nav-link{display:inline-block;padding:.5rem .58rem;font-size:11px;font-weight:550;letter-spacing:.115em;
+  text-transform:uppercase;color:var(--on-70);text-decoration:none;border-radius:2px;position:relative;white-space:nowrap;transition:color .2s var(--ease)}
+.nav-link::after{content:"";position:absolute;left:.58rem;right:.58rem;bottom:.25rem;height:1.5px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .26s var(--ease)}
+.nav-link:hover{color:var(--on)}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link[aria-current="true"]{color:var(--gold)}
+.nav-link[aria-current="true"]::after{transform:scaleX(1)}
+.nav-toggle{display:none;align-items:center;gap:.5rem;background:transparent;border:1px solid rgba(242,232,211,.28);
+  border-radius:2px;padding:.5rem .7rem;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--on);cursor:pointer;min-height:40px}
+.nav-toggle .bars{position:relative;width:16px;height:10px;flex:none}
+.nav-toggle .bars i{position:absolute;left:0;right:0;height:1.6px;background:currentColor;transition:transform .25s var(--ease),opacity .2s linear}
+.nav-toggle .bars i:nth-child(1){top:0}
+.nav-toggle .bars i:nth-child(2){top:4.2px}
+.nav-toggle .bars i:nth-child(3){top:8.4px}
+.nav-toggle[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(4.2px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-4.2px) rotate(-45deg)}
+.nav-progress{height:2px;position:relative;overflow:hidden}
+.nav-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-soft));transition:width .12s linear}
+@media (max-width:1080px){
+  .nav-toggle{display:inline-flex}
+  .nav-menu{position:absolute;left:0;right:0;top:100%;background:var(--navy-2);border-bottom:1px solid rgba(227,200,146,.24);
+    box-shadow:0 30px 44px -34px rgba(0,0,0,1);max-height:calc(100dvh - var(--nav-h));overflow-y:auto;display:none}
+  .nav-menu.is-open{display:block}
+  .nav-menu ul{flex-direction:column;align-items:stretch;gap:0;padding:.4rem clamp(16px,3.8vw,36px) 1rem}
+  .nav-menu li+li{border-top:1px solid var(--on-25)}
+  .nav-link{display:block;padding:.9rem .2rem;font-size:12px;letter-spacing:.14em}
+  .nav-link::after{left:.2rem;right:auto;width:22px;bottom:.6rem}
+}
+
+/* ---------- 1. HOME SECTION ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(24px,4vw,54px);align-items:center}
+.hero-title{font-size:clamp(2.6rem,6.2vw,4.4rem);line-height:1;letter-spacing:-.02em;margin:0 0 .55rem;font-weight:500}
+.hero-title em{font-style:italic;color:var(--gold-soft);font-weight:400}
+.hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.42rem);font-style:italic;color:var(--gold);margin:0 0 1.4rem}
+.hero-rule{width:60px;height:1px;background:var(--gold);border:0;margin:0 0 1.3rem}
+.hero-author{font-family:var(--serif);font-size:1.38rem;font-weight:600;margin:0 0 .3rem;color:var(--on)}
+.hero-meta{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-55);margin:0 0 1.4rem;font-weight:500}
+.hero-intro{max-width:48ch;font-size:1.02rem;color:var(--on-85);margin:0 0 1.75rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.8rem}
+.hero-exhibit{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.label-card{display:inline-block;background:var(--navy-2);border:1px solid rgba(227,200,146,.32);
+  padding:.75rem 1rem;border-radius:2px;box-shadow:var(--sh-1);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-70);line-height:1.65}
+.label-card b{display:block;font-family:var(--serif);font-size:14.5px;letter-spacing:.05em;color:var(--gold-soft);font-weight:600;text-transform:none}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:410px;padding:12px 6px 30px}
+.hero-frame{position:relative;background:linear-gradient(150deg,#2A3E5C,#1B2A44 60%,#152238);
+  border:1px solid #0B1424;padding:clamp(10px,1.6vw,15px);box-shadow:var(--sh-3);transform:rotate(-1.2deg)}
+.hero-frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,154,54,.45);pointer-events:none;z-index:2}
+.hero-frame svg{width:100%;height:auto;display:block}
+.tape{position:absolute;width:96px;height:24px;z-index:4;background:rgba(201,170,110,.34);
+  border-left:1px dashed rgba(242,232,211,.28);border-right:1px dashed rgba(242,232,211,.28);
+  box-shadow:0 1px 2px rgba(3,8,16,.4);mix-blend-mode:screen}
+.tape--a{top:-11px;left:30px;transform:rotate(-7deg)}
+.tape--b{top:-8px;right:20px;transform:rotate(5.5deg);width:72px;opacity:.85}
+.hero-note{position:absolute;right:-4px;bottom:6px;z-index:6;background:linear-gradient(160deg,#E3D2B4,#D8C5A3);
+  border:1px solid rgba(16,26,44,.4);padding:.45rem .75rem;box-shadow:var(--sh-paper);transform:rotate(2.2deg);
+  font-family:var(--hand);font-size:1.12rem;color:var(--burgundy-deep);line-height:1.15;max-width:160px}
+
+/* ---------- 2. STUDENT PROFILE SECTION ---------- */
+.profile-grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:start}
+.profile-id-col{display:flex;flex-direction:column;align-items:center;min-width:0}
+.id-stage{position:relative;width:100%;padding-bottom:150px;display:flex;justify-content:center;align-items:flex-start;touch-action:pan-y}
+.lanyard{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+.lanyard-print{position:absolute;top:2px;left:50%;transform:translateX(-50%) rotate(-1.5deg);z-index:5;
+  font-family:var(--sans);font-size:8px;letter-spacing:.2em;font-weight:700;color:#F2C94C;
+  background:rgba(10,18,32,.86);border:1px solid rgba(242,201,76,.55);padding:.2rem .45rem;white-space:nowrap}
+.id-anchor{position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:21px;height:21px;border-radius:50%;z-index:3;
+  background:radial-gradient(circle at 34% 28%,#E8DFC8,#8B8163 72%);border:1px solid #5F5942;
+  box-shadow:0 2px 4px rgba(3,8,16,.5),0 0 0 5px rgba(23,36,59,.9)}
+.id-card{position:relative;margin-top:140px;width:min(296px,80vw);transform-origin:50% 0;will-change:transform;
+  cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;
+  background:linear-gradient(168deg,#EBDFC6 0%,#DCCBAB 58%,#C9B491 100%);
+  border:1px solid rgba(16,26,44,.5);border-radius:12px;color:var(--ink);
+  box-shadow:var(--id-shadow,0 20px 36px -20px rgba(3,8,16,.9),0 6px 14px rgba(3,8,16,.4));
+  padding:0 0 12px;z-index:2;transition:box-shadow .32s var(--ease)}
+.id-card.is-dragging{cursor:grabbing}
+.id-card::before{content:"";position:absolute;inset:0;border-radius:12px;pointer-events:none;z-index:3;
+  background:linear-gradient(112deg,rgba(255,255,255,0) 26%,rgba(255,255,255,.34) 41%,rgba(255,255,255,.06) 50%,rgba(255,255,255,0) 60%);
+  mix-blend-mode:soft-light}
+.id-clip{position:absolute;top:-15px;left:50%;transform:translateX(-50%);width:44px;height:25px;
+  border-radius:4px 4px 3px 3px;background:linear-gradient(180deg,#233A58,#16243B 60%,#0E1929);
+  border:1px solid #0B1424;box-shadow:0 3px 5px rgba(3,8,16,.55),inset 0 1px 0 rgba(255,255,255,.2);z-index:4}
+.id-clip::after{content:"";position:absolute;left:50%;top:-7px;transform:translateX(-50%);width:19px;height:9px;
+  border:2px solid #C99A36;border-bottom:0;border-radius:5px 5px 0 0}
+.id-head{padding:1rem .85rem .65rem;text-align:center;border-bottom:2px solid var(--gold);
+  background:linear-gradient(180deg,var(--navy),var(--navy-2));border-radius:11px 11px 0 0;color:var(--on)}
+.id-head svg{width:19px;height:19px;margin:0 auto .4rem;color:var(--gold)}
+.id-school{font-family:var(--serif);font-size:.84rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0;line-height:1.3;color:var(--on)}
+.id-school-sub{font-size:7.5px;letter-spacing:.25em;text-transform:uppercase;color:rgba(242,232,211,.62);margin:.28rem 0 0}
+.id-photo{position:relative;margin:.75rem .85rem 0;aspect-ratio:1/1.04;border:1px solid rgba(16,26,44,.4);border-radius:2px;overflow:hidden;
+  background:linear-gradient(160deg,#DCCBAB,#C9B491);
+  background-image:linear-gradient(to right,rgba(23,36,59,.1) 1px,transparent 1px),linear-gradient(to bottom,rgba(23,36,59,.1) 1px,transparent 1px);background-size:18px 18px}
+.id-photo svg{position:absolute;inset:0;width:100%;height:100%;color:#8C7E60;opacity:.62}
+.id-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.id-photo-hint{position:absolute;left:0;right:0;bottom:0;padding:.28rem .38rem;font-size:7.8px;letter-spacing:.2em;
+  text-transform:uppercase;text-align:center;color:#3A352A;background:rgba(235,223,198,.9);border-top:1px solid rgba(16,26,44,.3)}
+.id-body{padding:.8rem .9rem .55rem;text-align:center}
+.id-name{font-family:var(--serif);font-size:1.16rem;font-weight:600;line-height:1.2;letter-spacing:.015em;margin:0 0 .28rem;text-transform:uppercase;color:var(--ink)}
+.id-course{font-size:10px;line-height:1.45;color:var(--ink-70);margin:0 0 .55rem;letter-spacing:.025em}
+.id-facts{display:flex;flex-direction:column;gap:.2rem;align-items:center}
+.id-fact{font-size:9.2px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);font-weight:600;
+  background:rgba(36,61,53,.14);border:1px solid rgba(36,61,53,.3);padding:.2rem .55rem;border-radius:1px}
+.id-foot{margin:0 .85rem;padding-top:.5rem;border-top:1px solid rgba(16,26,44,.2);font-size:7.5px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ink-55);text-align:center}
+.id-hint-row{display:flex;align-items:center;gap:.65rem;margin-top:.45rem;min-height:32px;flex-wrap:wrap;justify-content:center}
+.id-hint{font-family:var(--hand);font-size:1.22rem;color:var(--gold-soft);display:inline-flex;align-items:center;gap:.38rem;line-height:1}
+.id-hint svg{width:16px;height:16px;flex:none}
+.id-drag-status{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-55)}
+
+/* Three Pinned Note Cards */
+.profile-notes-col{min-width:0;display:flex;flex-direction:column;gap:clamp(18px,2.8vw,30px)}
+.pinned-card{position:relative;background:linear-gradient(160deg,#F5E8D0 0%,#E9D9BF 62%,#DFCBB0 100%);
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(37,35,31,.08) 31px 32px);
+  color:var(--ink);border:1px solid rgba(16,26,44,.38);box-shadow:var(--sh-paper);border-radius:2px;
+  padding:clamp(22px,3.2vw,36px) clamp(20px,2.8vw,34px) clamp(20px,2.8vw,28px);
+  transform:rotate(var(--r,0deg));transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.pinned-card:hover{transform:rotate(0deg) translateY(-2px);box-shadow:0 24px 44px -22px rgba(4,10,20,1)}
+.pinned-card::after{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:1px;background:rgba(117,47,64,.2)}
+.card-pin{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:18px;height:18px;z-index:6;pointer-events:none}
+.card-tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);width:88px;height:22px;z-index:6;
+  background:rgba(201,170,110,.58);border-left:1px dashed rgba(255,255,255,.45);border-right:1px dashed rgba(255,255,255,.45);
+  box-shadow:0 1px 3px rgba(3,8,16,.28);mix-blend-mode:multiply}
+.card-sticker{position:absolute;z-index:7;width:42px;height:42px;filter:drop-shadow(0 3px 5px rgba(3,8,16,.45));pointer-events:none}
+.card-sticker--art{top:-12px;right:18px;transform:rotate(12deg)}
+.card-sticker--reading{bottom:-10px;right:18px;transform:rotate(-8deg)}
+.card-sticker--stars{top:-12px;right:22px;transform:rotate(6deg)}
+.card-text{font-family:var(--hand);font-size:clamp(1.22rem,1.8vw,1.38rem);line-height:1.58;color:#24211B;margin:0}
+.card-sign{font-family:var(--hand);font-size:1.32rem;color:var(--burgundy-deep);margin-top:1rem;text-align:right}
+
+/* ---------- 3. MY LITERARY DESK &middot; ONE SHARED WORKSPACE ---------- */
+.desk-anchor{position:absolute;top:-80px;height:1px;width:1px;overflow:hidden}
+.desk-wrap{position:relative}
+
+/* Resting Desk View */
+.desk-shelf{position:relative;padding:clamp(28px,4.5vw,52px) clamp(16px,3vw,38px);border:1px solid rgba(227,200,146,.2);
+  background:radial-gradient(ellipse 70% 50% at 50% 95%,rgba(201,154,54,.14),transparent 75%),
+             linear-gradient(180deg,rgba(29,45,71,.75),rgba(16,26,44,.94));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -30px 50px -38px rgba(0,0,0,.9);border-radius:4px}
+.desk-objects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(20px,3.2vw,36px);align-items:end;justify-items:center}
+.desk-item{display:flex;flex-direction:column;align-items:center;width:100%;max-width:270px;text-align:center;gap:.9rem}
+.desk-item-label{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+
+/* Book 1: Great Books Hardcover */
+.hc-stack{position:relative;width:100%;aspect-ratio:1/1.42;perspective:1400px}
+.hc-cover{position:relative;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;
+  padding:20px 18px;border-radius:3px 7px 7px 3px;text-align:center;color:#F0DDB6;cursor:pointer;
+  background:repeating-linear-gradient(48deg,rgba(255,255,255,.04) 0 1.5px,transparent 1.5px 4px),
+             linear-gradient(146deg,#31513F 0%,#243D35 46%,#152219 100%);
+  border:1px solid rgba(227,200,146,.38);
+  box-shadow:inset 12px 0 20px -12px rgba(0,0,0,.85),0 3px 0 #111C14,0 20px 34px -14px rgba(3,8,16,.9);
+  transform:rotate(-1.2deg);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.hc-cover:hover{transform:rotate(0deg) translateY(-6px);box-shadow:inset 12px 0 20px -12px rgba(0,0,0,.85),0 5px 0 #111C14,0 30px 46px -16px rgba(3,8,16,1)}
+.hc-cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:16px;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.1) 60%,rgba(255,255,255,.08));border-right:1px solid rgba(0,0,0,.35)}
+.hc-cover::after{content:"";position:absolute;inset:9px;border:1px solid rgba(227,200,146,.45);border-radius:2px;pointer-events:none}
+.hc-spine-edges{position:absolute;right:-7px;top:6px;bottom:2px;width:10px;background:repeating-linear-gradient(90deg,#CBB795 0 1px,#E3D2B4 1px 3px);border-radius:0 3px 3px 0;box-shadow:2px 0 6px rgba(3,8,16,.6)}
+.hc-ribbon{position:absolute;right:26px;top:100%;width:13px;height:42px;background:linear-gradient(180deg,#9A4256,#752F40);clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);box-shadow:0 4px 8px rgba(3,8,16,.8)}
+
+/* Book 2: Burgundy Masterpiece Notebook */
+.nb-thumb-stack{position:relative;width:100%;aspect-ratio:1/1.42}
+.nb-thumb{position:relative;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;
+  padding:20px 18px;border-radius:4px 10px 10px 4px;text-align:center;color:#FFF8E8;cursor:pointer;
+  background:repeating-linear-gradient(50deg,rgba(255,255,255,.04) 0 1.5px,transparent 1.5px 4px),
+             linear-gradient(158deg,#8A3A4B,#752F40 55%,#4E1D28);
+  border:1px solid rgba(227,200,146,.32);
+  box-shadow:0 2px 0 #3F1822,0 20px 34px -14px rgba(3,8,16,.9),inset 0 1px 0 rgba(255,255,255,.14);
+  transform:rotate(.8deg);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.nb-thumb:hover{transform:rotate(0deg) translateY(-6px);box-shadow:0 4px 0 #3F1822,0 30px 46px -16px rgba(3,8,16,1)}
+.nb-thumb::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:1px;background:rgba(0,0,0,.35)}
+.nb-thumb::after{content:"";position:absolute;inset:9px;border:1px solid rgba(227,200,146,.38);border-radius:2px;pointer-events:none}
+.nb-thumb-tape{position:absolute;top:-10px;right:20px;width:66px;height:20px;background:rgba(201,170,110,.62);
+  transform:rotate(4deg);z-index:4;box-shadow:0 1px 2px rgba(3,8,16,.35);border-left:1px dashed rgba(255,255,255,.4);border-right:1px dashed rgba(255,255,255,.4)}
+.nb-thumb-badge{position:absolute;right:-8px;bottom:-8px;width:56px;height:56px;border-radius:50%;z-index:5;
+  background:radial-gradient(circle at 36% 30%,#F5E7C6,#DCC99F);border:1px solid rgba(16,26,44,.4);
+  box-shadow:0 6px 14px -6px rgba(3,8,16,.8);display:grid;place-items:center;transform:rotate(9deg);text-align:center;
+  font-family:var(--hand);font-size:.88rem;line-height:1.05;color:var(--burgundy-deep);font-weight:600}
+
+/* Book 3: Burnt-Orange Tabbed Reflection Notebook */
+.rf-thumb{position:relative;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;
+  padding:20px 18px;border-radius:4px 10px 10px 4px;text-align:center;color:#FFF8E8;cursor:pointer;
+  background:repeating-linear-gradient(50deg,rgba(255,255,255,.04) 0 1.5px,transparent 1.5px 4px),
+             linear-gradient(158deg,#C2683F,#B65B35 55%,#85401F);
+  border:1px solid rgba(227,200,146,.32);
+  box-shadow:0 2px 0 #6B3319,0 20px 34px -14px rgba(3,8,16,.9),inset 0 1px 0 rgba(255,255,255,.16);
+  transform:rotate(-.6deg);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.rf-thumb:hover{transform:rotate(0deg) translateY(-6px);box-shadow:0 4px 0 #6B3319,0 30px 46px -16px rgba(3,8,16,1)}
+.rf-thumb::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:1px;background:rgba(0,0,0,.35)}
+.rf-thumb::after{content:"";position:absolute;inset:9px;border:1px solid rgba(227,200,146,.38);border-radius:2px;pointer-events:none}
+.rf-thumb-tabs{position:absolute;right:-12px;top:28px;bottom:28px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.rf-thumb-tab{width:16px;height:24px;border-radius:0 3px 3px 0;box-shadow:1px 2px 4px rgba(0,0,0,.4)}
+
+/* Item 4: Summary of Learning Index-Card Stack */
+.ic-thumb-stack{position:relative;width:100%;aspect-ratio:1.4/1;max-width:260px}
+.ic-thumb{position:relative;width:100%;height:100%;background:linear-gradient(160deg,#F5EADB 0%,#E6D7BD 65%,#DAC7A6 100%);
+  border:1px solid rgba(16,26,44,.4);border-radius:4px;color:var(--ink);padding:14px 16px;cursor:pointer;
+  box-shadow:2px 2px 0 #D0BE9B,4px 4px 0 #C4B08A,0 16px 28px -12px rgba(3,8,16,.9);
+  transform:rotate(1.2deg);transition:transform .4s var(--ease),box-shadow .4s var(--ease);display:flex;flex-direction:column;justify-content:space-between}
+.ic-thumb:hover{transform:rotate(0deg) translateY(-6px);box-shadow:2px 2px 0 #D0BE9B,4px 4px 0 #C4B08A,0 26px 40px -14px rgba(3,8,16,1)}
+.ic-thumb::before{content:"";position:absolute;left:0;right:0;top:38px;height:1px;background:rgba(117,47,64,.35)}
+.ic-thumb-tabs{position:absolute;top:-12px;left:14px;right:14px;display:flex;gap:4px}
+.ic-thumb-tab{flex:1;height:12px;border-radius:3px 3px 0 0;font-size:6px;font-weight:700;color:#FFF;text-align:center;line-height:12px}
+
+/* Cover Typography */
+.cv-kicker{font-family:var(--sans);font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.4rem}
+.cv-ttl-hc{font-family:var(--serif);font-size:1.42rem;line-height:1.15;font-style:italic;color:#F6E9C8}
+.cv-sub-hc{font-family:var(--serif);font-size:.82rem;letter-spacing:.04em;color:var(--gold-soft);margin-top:.3rem;line-height:1.3}
+.cv-au-hc{font-family:var(--serif);font-size:.9rem;color:#F0DDB6;letter-spacing:.05em}
+.cv-ttl-nb{font-family:var(--hand);font-size:1.6rem;line-height:1.1;color:#FFF8E8;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.cv-sub-nb{font-family:var(--sans);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,248,232,.8);margin-top:.4rem}
+.cv-ic-ttl{font-family:var(--hand);font-size:1.35rem;font-weight:600;color:var(--burgundy-deep);line-height:1}
+.cv-ic-list{list-style:none;padding:0;margin:4px 0 0;display:flex;flex-direction:column;gap:3px;font-family:var(--sans);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.cv-ic-list li{display:flex;align-items:center;gap:4px;padding:2px 4px;border-radius:1px}
+
+/* ---------- SHARED READING STAGE ---------- */
+.stage-wrap{position:relative;animation:stageIn .45s var(--ease) both}
+@keyframes stageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* Stage Top Selector Bar */
+.stage-bar{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;
+  background:rgba(20,32,52,.92);border:1px solid rgba(227,200,146,.25);border-radius:4px;padding:.55rem .9rem;margin-bottom:1.1rem;box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.obj-selector{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}
+.obj-tab{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.45rem .75rem;border-radius:2px;border:1px solid rgba(242,232,211,.22);background:transparent;color:var(--on-70);
+  cursor:pointer;transition:all .2s var(--ease);display:inline-flex;align-items:center;gap:.4rem}
+.obj-tab:hover{background:rgba(242,232,211,.08);color:var(--on);border-color:var(--gold)}
+.obj-tab[aria-pressed="true"]{background:var(--gold);color:#1A1408;border-color:var(--gold-deep);font-weight:700}
+.stage-state{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-70);font-weight:600}
+.stage-state b{color:var(--gold-soft)}
+
+/* Consistent Portrait Spread Geometry */
+.book-shell{position:relative;padding:clamp(8px,1.2vw,14px);border-radius:6px;max-width:960px;margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.9)}
+.book-shell--hc{background:repeating-linear-gradient(46deg,rgba(255,255,255,.04) 0 1.5px,transparent 1.5px 4px),linear-gradient(150deg,#2C4A3E,#1E342B 52%,#152419);border:1px solid rgba(227,200,146,.28)}
+.book-shell--burgundy{background:linear-gradient(150deg,#6E2C3C,#54212C 60%,#3E1722);border:1px solid rgba(227,200,146,.22)}
+.book-shell--orange{background:linear-gradient(150deg,#9E4E2C,#8A4225 60%,#66301A);border:1px solid rgba(227,200,146,.25)}
+
+/* Two portrait pages side-by-side */
+.spread{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--parchment);perspective:2000px;
+  border-radius:3px;box-shadow:inset 0 0 0 1px rgba(37,35,31,.2)}
+.spread::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:48px;transform:translateX(-50%);z-index:4;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(37,35,31,.12) 36%,rgba(37,35,31,.24) 50%,rgba(37,35,31,.12) 64%,transparent)}
+.page{position:relative;padding:clamp(20px,2.8vw,36px);color:var(--ink-80);min-width:0;min-height:580px;
+  background:linear-gradient(160deg,var(--parchment-2),var(--parchment) 72%);
+  display:flex;flex-direction:column;justify-content:space-between;user-select:text}
+.page--left{border-radius:2px 0 0 2px;box-shadow:inset -14px 0 20px -18px rgba(37,35,31,.65)}
+.page--right{border-radius:0 2px 2px 0;box-shadow:inset 14px 0 20px -18px rgba(37,35,31,.65)}
+
+/* Click Page to Turn cues */
+.page-turn-hint{position:absolute;bottom:10px;font-size:10px;font-family:var(--sans);letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(117,47,64,.6);opacity:0;transition:opacity .2s var(--ease);pointer-events:none}
+.page--left .page-turn-hint{left:14px}
+.page--right .page-turn-hint{right:14px}
+.page--left:hover:not(.is-first) .page-turn-hint{opacity:1}
+.page--right:hover:not(.is-last) .page-turn-hint{opacity:1}
+
+/* Page Corner Curls */
+.page--left::after{content:"";position:absolute;bottom:0;left:0;width:24px;height:24px;background:linear-gradient(135deg,rgba(0,0,0,.18),transparent 70%);border-radius:2px 0 0 0;opacity:0;transition:opacity .2s var(--ease);pointer-events:none}
+.page--right::after{content:"";position:absolute;bottom:0;right:0;width:24px;height:24px;background:linear-gradient(225deg,rgba(0,0,0,.18),transparent 70%);border-radius:0 2px 0 0;opacity:0;transition:opacity .2s var(--ease);pointer-events:none}
+.page--left:hover:not(.is-first)::after{opacity:1}
+.page--right:hover:not(.is-last)::after{opacity:1}
+
+/* Page Content Styling */
+.page-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 .4rem}
+.page-title{font-size:clamp(1.38rem,2.2vw,1.82rem);line-height:1.15;margin:0 0 .3rem;color:var(--ink)}
+.page-sub{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-55);margin:0 0 .8rem}
+.page-rule{height:1px;background:linear-gradient(90deg,rgba(117,47,64,.45),rgba(117,47,64,.04));border:0;margin:0 0 .85rem}
+.page-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start}
+.page-body p{font-size:14.8px;line-height:1.68;color:var(--ink-80);margin:0 0 .85em}
+.page-body p:last-child{margin-bottom:0}
+.page-body p.has-dropcap::first-letter{font-family:var(--serif);font-size:3em;float:left;line-height:.82;padding:.05em .12em 0 0;color:var(--burgundy);font-weight:600}
+.page-foot{margin-top:1.1rem;padding-top:.55rem;border-top:1px solid var(--rule-soft);font-size:9.2px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-40);display:flex;justify-content:space-between;gap:.8rem}
+
+/* Collection Index List */
+.idx{display:flex;flex-direction:column;list-style:none;padding:0;margin:0}
+.idx-item{display:grid;grid-template-columns:54px minmax(0,1fr);gap:.7rem;align-items:start;text-align:left;
+  background:none;border:0;border-bottom:1px solid var(--rule-soft);padding:.55rem 0;cursor:pointer;
+  font:inherit;color:inherit;width:100%;transition:background .2s var(--ease),padding .2s var(--ease)}
+.idx-item:hover{background:rgba(117,47,64,.07);padding-inline:.35rem}
+.idx-title{font-family:var(--serif);font-size:1.02rem;font-weight:600;line-height:1.2;margin:0 0 .1rem;color:var(--ink)}
+.idx-author{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-55);display:block;margin-bottom:.2rem}
+.idx-lens{display:inline-block;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#F3E8CC;
+  background:var(--forest);padding:.1rem .35rem;border-radius:1px;margin-bottom:.25rem}
+.idx-desc{font-size:11.8px;line-height:1.45;color:var(--ink-70);margin:0 0 .25rem}
+.idx-go{font-size:8.8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--burgundy);display:inline-flex;align-items:center;gap:.25rem}
+
+/* Work Overview Left Page */
+.work-top{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:.85rem}
+.cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
+  border-radius:2px;border:1px solid rgba(37,35,31,.32);background:var(--cv,#D6C3A2);padding:6px 5px;text-align:center;
+  aspect-ratio:1/1.4;color:var(--ci,#4A4738);width:64px;flex:none}
+.cv-num{font-size:6.5px;letter-spacing:.2em;color:var(--ci,#4A4738);font-weight:700}
+.cv-art{flex:1;display:flex;align-items:center;justify-content:center;color:var(--ci,#4A4738);padding:2px 1px;min-height:0}
+.cv-art svg{width:100%;height:100%;max-height:100%}
+.cv-ttl{font-family:var(--serif);font-size:7.8px;line-height:1.15;font-weight:600;color:#2A2721;padding:0 1px}
+.cv-au{font-size:5.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ci,#4A4738);opacity:.85}
+.work-lens{display:inline-block;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  color:#F5EBD3;background:var(--forest);padding:.22rem .48rem;border-radius:1px;margin-bottom:.4rem}
+.wsec{margin-top:.8rem}
+.wsec h4{font-family:var(--sans);font-size:8.8px;letter-spacing:.18em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 .3rem}
+.wsec p{font-size:13.5px;line-height:1.55;color:var(--ink-80);margin:0 0 .45rem}
+.chip-row{display:flex;flex-wrap:wrap;gap:.25rem;margin:0;padding:0;list-style:none}
+.chip{font-size:10px;color:#25302B;background:rgba(36,61,53,.13);border:1px solid rgba(36,61,53,.26);padding:.14rem .4rem;border-radius:2px}
+.fig-list{margin:0;padding:0;list-style:none;font-size:12.8px;line-height:1.45;color:var(--ink-80)}
+.fig-list li{display:flex;gap:.35rem;margin:.18rem 0}
+.fig-list li::before{content:"&middot;";color:var(--burgundy);font-weight:700;flex:none}
+.fig-list b{font-weight:600;color:var(--ink)}
+
+/* Bottom Controls Bar */
+.stage-foot-bar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.9rem}
+.stage-foot-group{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+
+/* First-use page turn tip */
+.turn-toast{display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:rgba(29,45,71,.85);
+  border:1px dashed rgba(227,200,146,.4);padding:.4rem .85rem;border-radius:2px;font-size:11.5px;color:var(--gold-soft);margin-top:.6rem}
+.turn-toast button{background:none;border:0;color:inherit;cursor:pointer;font-weight:700;padding:.2rem}
+
+/* ---------- 8. MASTERPIECE NOTEBOOK STYLES ---------- */
+.nb-ruled{background-image:repeating-linear-gradient(0deg,transparent 0 30px,rgba(37,35,31,.07) 30px 31px)}
+.nb-art{position:relative;background:linear-gradient(160deg,#F0E3C8,#DCCBAB);padding:8px;color:var(--ink);
+  border:1px solid rgba(37,35,31,.3);box-shadow:0 10px 22px -16px rgba(3,8,16,.9);transform:rotate(-1.2deg);margin-bottom:.8rem}
+.nb-art::before{content:"";position:absolute;top:-9px;left:20px;width:70px;height:20px;background:rgba(201,170,110,.66);
+  transform:rotate(-3deg);border-left:1px dashed rgba(255,255,255,.4);border-right:1px dashed rgba(255,255,255,.4)}
+.nb-art-cap{font-family:var(--hand);font-size:1rem;color:var(--ink-70);margin-top:.45rem;text-align:center}
+.sticky-list{list-style:none;padding:0;margin:.2rem 0 0;display:grid;gap:.55rem}
+.sticky{display:block;position:relative;background:linear-gradient(170deg,#E7CE8C,#D9BD77);color:#2E2A1E;
+  padding:.65rem .8rem;box-shadow:0 8px 16px -14px rgba(3,8,16,.9);transform:rotate(-.5deg);border:1px solid rgba(37,35,31,.14)}
+.sticky:nth-child(2n){transform:rotate(.6deg);background:linear-gradient(170deg,#E8C7A6,#DCB491)}
+.sticky:nth-child(3n){transform:rotate(-.2deg);background:linear-gradient(170deg,#DFD3B8,#CDBF9E)}
+.sticky b{display:block;font-family:var(--sans);font-size:8.8px;letter-spacing:.15em;text-transform:uppercase;color:#6E5326;margin-bottom:.14rem;font-weight:700}
+.sticky span{font-family:var(--hand);font-size:1.15rem;line-height:1.32;color:#2E2A1E}
+.m-hand{font-family:var(--hand);font-size:1.24rem;color:var(--burgundy-deep);line-height:1.2}
+
+/* ---------- 9. PERSONAL REFLECTION &middot; TABBED NOTEBOOK ---------- */
+.rf-spread-wrap{position:relative}
+.rf-edge-tabs{position:absolute;right:-38px;top:40px;display:flex;flex-direction:column;gap:8px;z-index:20}
+.rf-edge-tab{position:relative;display:flex;align-items:center;justify-content:center;
+  width:38px;height:62px;border:1px solid rgba(16,26,44,.4);border-left:0;border-radius:0 6px 6px 0;
+  cursor:pointer;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:3px 4px 10px rgba(0,0,0,.35);transition:transform .2s var(--ease),width .2s var(--ease);
+  color:#FFF;writing-mode:vertical-rl;transform:rotate(180deg);padding:4px 0}
+.rf-edge-tab:hover{transform:rotate(180deg) translateX(-4px);width:42px}
+.rf-edge-tab[aria-selected="true"]{transform:rotate(180deg) translateX(-6px);width:45px;box-shadow:4px 6px 14px rgba(0,0,0,.5);font-weight:800}
+.rf-tab--0{background:linear-gradient(90deg,#B88828,#C99A36)}
+.rf-tab--1{background:linear-gradient(90deg,#5E2331,#752F40)}
+.rf-tab--2{background:linear-gradient(90deg,#192B25,#243D35)}
+.rf-tab--3{background:linear-gradient(90deg,#8A4225,#B65B35)}
+.rf-tab--4{background:linear-gradient(90deg,#101A2C,#1D2D47)}
+.rf-note-card{position:relative;background:linear-gradient(170deg,#E9D08E,#DBBF7A);color:#2E2A1E;
+  padding:clamp(18px,2.4vw,28px);box-shadow:0 12px 24px -18px rgba(3,8,16,.95);border:1px solid rgba(37,35,31,.16);margin-top:.4rem;border-radius:2px}
+.rf-note-card::before{content:"";position:absolute;top:-10px;left:50%;margin-left:-32px;width:64px;height:20px;
+  background:rgba(201,170,110,.7);transform:rotate(-1.6deg);border-left:1px dashed rgba(255,255,255,.45);border-right:1px dashed rgba(255,255,255,.45)}
+.rf-note-card .rf-label{font-family:var(--sans);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#6E5326;font-weight:700;margin:0 0 .6rem;display:block}
+.rf-note-card .rf-answer{font-family:var(--hand);font-size:clamp(1.22rem,1.9vw,1.4rem);line-height:1.55;color:#282417;margin:0}
+.std .rf-note-card .rf-answer{font-family:var(--sans);font-size:15.5px;line-height:1.7;color:#282417}
+.rf-deco{margin-top:1.2rem;color:#8A7A55;opacity:.55;display:flex;justify-content:center}
+.rf-deco svg{width:52px;height:52px}
+.closing-thought-box{position:relative;margin-top:1.2rem;padding:1.1rem;background:linear-gradient(160deg,var(--parchment-2),var(--parchment));
+  color:var(--ink);border:1px dashed rgba(117,47,64,.45);border-radius:2px;box-shadow:var(--sh-paper)}
+.closing-thought-box p{font-family:var(--hand);font-size:1.24rem;line-height:1.5;color:#2A2721;margin:0 0 .5rem}
+.std .closing-thought-box p{font-family:var(--sans);font-size:15px;line-height:1.65}
+.closing-thought-box .closing-sign{font-family:var(--hand);font-size:1.28rem;color:var(--burgundy-deep);text-align:right}
+
+/* ---------- 10. SUMMARY OF LEARNING &middot; INDEX-CARD STACK ---------- */
+.card-stack-stage{max-width:740px;margin:0 auto}
+.index-card{position:relative;background:linear-gradient(160deg,#F7EEDB 0%,#EADECA 60%,#DDCBB0 100%);
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(37,35,31,.07) 31px 32px);
+  color:var(--ink);border:1px solid rgba(16,26,44,.42);border-radius:4px;
+  box-shadow:3px 3px 0 #D0BE9B,6px 6px 0 #C4B08A,0 24px 44px -18px rgba(3,8,16,.95);
+  padding:clamp(22px,3.6vw,42px);min-height:430px;display:flex;flex-direction:column;justify-content:space-between}
+.index-card::after{content:"";position:absolute;left:24px;top:0;bottom:0;width:1.5px;background:rgba(117,47,64,.35)}
+.ic-tabs-bar{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
+.ic-tab-btn{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:.45rem .75rem;border-radius:3px 3px 0 0;border:1px solid rgba(16,26,44,.3);border-bottom:0;
+  cursor:pointer;background:#DCC9A6;color:#3A3426;transition:all .2s var(--ease)}
+.ic-tab-btn[aria-selected="true"]{background:#F7EEDB;color:var(--burgundy-deep);border-color:rgba(117,47,64,.5);transform:translateY(-2px);font-weight:800}
+.ic-card-body{flex:1;padding-left:14px}
+.ic-card-body h3{font-family:var(--hand);font-size:clamp(1.7rem,2.8vw,2.2rem);color:var(--burgundy-deep);margin:0 0 .6rem}
+.ic-card-body p{font-size:15px;line-height:1.68;color:var(--ink-80);margin:0 0 .8em}
+.ic-card-body p.hand-note{font-family:var(--hand);font-size:1.35rem;line-height:1.5;color:#24211A}
+
+/* Reading Trail Symbols inside Index Card */
+.trail{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0;padding:0;list-style:none}
+.sym{position:relative;display:flex;flex-direction:column;align-items:center;gap:.25rem;width:86px;padding:.5rem .25rem;
+  background:linear-gradient(165deg,#E6D6B8,#D2BE9C);color:#2A2721;border:1px solid rgba(16,26,44,.35);
+  box-shadow:0 8px 14px -12px rgba(3,8,16,.9);cursor:pointer;border-radius:2px;transition:all .2s var(--ease)}
+.sym:hover{transform:translateY(-2px);border-color:var(--gold)}
+.sym[aria-pressed="true"]{border-color:var(--burgundy);background:#EFE2C5;box-shadow:0 0 0 1.5px var(--burgundy)}
+.sym svg{width:34px;height:34px;color:#6E3B44}
+.sym .sym-name{font-family:var(--sans);font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#403A2C;text-align:center;line-height:1.2}
+.trail-note-box{background:linear-gradient(160deg,#FFF6E6,#EADDC5);border:1px solid rgba(117,47,64,.3);padding:.8rem 1rem;border-radius:2px;margin-top:.6rem}
+.trail-note-box h4{font-family:var(--serif);font-size:1.15rem;color:var(--burgundy-deep);margin:0 0 .2rem}
+.trail-note-box p{font-family:var(--hand);font-size:1.2rem;line-height:1.45;color:#252219;margin:0}
+
+/* Lenses & Skills lists */
+.lenses-ic-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.6rem;margin-top:.8rem}
+.lens-ic-box{background:rgba(255,255,255,.45);border:1px solid rgba(37,35,31,.18);padding:.65rem .85rem;border-radius:2px}
+.lens-ic-box h5{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin:0 0 .2rem}
+.lens-ic-box p{font-size:13.2px;line-height:1.45;color:var(--ink-80);margin:0}
+.skills-ic-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin-top:.8rem;list-style:none;padding:0}
+.skills-ic-list li{background:rgba(255,255,255,.45);border:1px solid rgba(37,35,31,.18);padding:.6rem .8rem;border-radius:2px}
+.skills-ic-list b{display:block;font-family:var(--hand);font-size:1.22rem;color:var(--burgundy-deep);margin-bottom:.15rem}
+.skills-ic-list span{font-size:12.5px;line-height:1.4;color:var(--ink-70);display:block}
+
+/* ---------- 7. REPAIRED "READ IN FULL" OVERLAY ---------- */
+.reader{position:fixed;inset:0;z-index:9999;display:flex;align-items:flex-start;justify-content:center;
+  padding:clamp(14px,3.5vw,46px);background:rgba(10,16,28,.88);backdrop-filter:blur(8px);overflow-y:auto}
+.reader[hidden]{display:none}
+.reader-panel{position:relative;width:100%;max-width:780px;color:var(--ink);
+  background:#EDE1C9;
+  background-image:linear-gradient(to bottom,rgba(37,35,31,.06) 1px,transparent 1px);
+  background-size:100% 30px;border:1px solid rgba(16,26,44,.5);
+  box-shadow:0 34px 84px -24px rgba(0,0,0,.95);padding:clamp(24px,4.5vw,54px);margin:auto;border-radius:3px}
+.reader-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem;
+  padding-bottom:.9rem;border-bottom:1px solid var(--rule)}
+.reader-kicker{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700}
+.reader-title{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:.25rem 0 .3rem;color:var(--ink)}
+.reader-sub{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-55)}
+.reader-body{font-size:1.05rem;line-height:1.8;max-width:68ch;color:var(--ink-80)}
+.reader-body p{margin:0 0 1.05em}
+.reader-body p:first-child::first-letter{font-family:var(--serif);font-size:3.2em;float:left;line-height:.84;padding:.05em .1em 0 0;color:var(--burgundy);font-weight:600}
+.reader-foot{margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.reader .btn{--btn-bg:var(--navy);--btn-fg:var(--on);--btn-bd:rgba(16,26,44,.6)}
+.reader .btn--primary{--btn-bg:var(--burgundy);--btn-fg:#FFF8F0;--btn-bd:var(--burgundy-deep)}
+
+/* All Reflections Modal */
+.all-modal{position:fixed;inset:0;z-index:9998;display:flex;align-items:flex-start;justify-content:center;
+  padding:clamp(14px,3.5vw,46px);background:rgba(10,16,28,.88);backdrop-filter:blur(8px);overflow-y:auto}
+.all-modal[hidden]{display:none}
+.all-modal-panel{position:relative;width:100%;max-width:840px;color:var(--ink);background:#EDE1C9;
+  border:1px solid rgba(16,26,44,.5);box-shadow:0 34px 84px -24px rgba(0,0,0,.95);padding:clamp(22px,4vw,46px);margin:auto;border-radius:3px}
+.all-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(14px,2vw,20px);margin-top:1rem}
+.all-card{background:linear-gradient(160deg,var(--parchment-2),var(--parchment));color:var(--ink);padding:1.1rem 1.15rem;
+  box-shadow:var(--sh-paper);border:1px solid rgba(16,26,44,.35);border-radius:2px}
+.all-card h4{font-family:var(--serif);font-size:1.12rem;font-style:italic;margin:0 0 .4rem;color:var(--burgundy-deep)}
+.all-card .all-k{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-55);font-weight:700;display:block;margin-bottom:.35rem}
+.all-card p{font-family:var(--hand);font-size:1.18rem;line-height:1.48;color:#2A2721;margin:0 0 .5em}
+.all-card p:last-child{margin-bottom:0}
+
+/* ---------- 13. COMPACT REFERENCES & CREDITS CARD ---------- */
+.references-card{position:relative;background:linear-gradient(160deg,#E6D7BD 0%,#D8C5A3 100%);
+  color:var(--ink);border:1px solid rgba(16,26,44,.4);box-shadow:var(--sh-paper);border-radius:3px;
+  padding:clamp(22px,3.4vw,40px);display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(20px,2.8vw,36px)}
+.ref-col-title{font-family:var(--serif);font-size:1.18rem;font-weight:600;color:var(--burgundy-deep);
+  border-bottom:1px solid rgba(117,47,64,.35);padding-bottom:.45rem;margin:0 0 .75rem}
+.ref-compact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.65rem}
+.ref-compact-list li{font-size:13.2px;line-height:1.45;color:var(--ink-80);padding-bottom:.45rem;border-bottom:1px dashed rgba(37,35,31,.2)}
+.ref-compact-list li:last-child{border-bottom:0;padding-bottom:0}
+.ref-desc{font-size:11.5px;line-height:1.42;color:var(--ink-70);margin:.18rem 0 0}
+.ref-links{font-size:11.5px;margin-top:.2rem}
+.ref-links a{color:var(--burgundy-deep);font-weight:550;text-decoration:none;border-bottom:1px solid rgba(117,47,64,.4);padding-bottom:.5px}
+.ref-links a:hover{border-color:var(--burgundy-deep);background:rgba(117,47,64,.08)}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:linear-gradient(180deg,var(--navy-deep),#0B1424);border-top:1px solid rgba(227,200,146,.2);
+  padding-block:clamp(36px,5vw,56px) 0;color:var(--on-70)}
+.footer-grid{display:grid;grid-template-columns:1.35fr .8fr 1fr;gap:clamp(24px,3.8vw,52px);align-items:start}
+.footer-title{font-family:var(--serif);font-size:1.48rem;line-height:1.2;margin-bottom:.65rem;color:var(--on)}
+.footer-name{font-family:var(--serif);font-size:1.06rem;font-weight:600;margin:.15rem 0 .1rem;color:var(--gold-soft)}
+.footer-meta{font-size:12px;color:var(--on-55);line-height:1.8}
+.footer-h{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.75rem}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem}
+.footer-links a{font-size:12.8px;color:var(--on-70);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px;transition:color .2s,border-color .2s}
+.footer-links a:hover{color:var(--gold);border-color:rgba(201,154,54,.5)}
+.footer-bottom{margin-top:clamp(28px,3.5vw,42px);border-top:1px solid var(--on-25);padding-block:1rem;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between;
+  font-size:10.5px;letter-spacing:.06em;color:var(--on-40);text-transform:uppercase}
+.footer-bottom a{color:var(--on-70);text-decoration:none;border-bottom:1px solid var(--on-25);padding-bottom:1px}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ---------- RESPONSIVE BEHAVIOR ---------- */
+@media (max-width:1040px){
+  .hero{grid-template-columns:1fr;gap:30px}
+  .hero-art{order:2;max-width:380px}
+  .profile-grid{grid-template-columns:1fr;gap:32px}
+  .id-stage{padding-bottom:140px}
+  .id-card{margin-top:120px}
+  .references-card{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .spread{grid-template-columns:1fr;perspective:none}
+  .spread::before{display:none}
+  .page--left{border-radius:2px 2px 0 0;box-shadow:none;border-bottom:1px dashed rgba(37,35,31,.24);min-height:auto}
+  .page--right{border-radius:0 0 2px 2px;box-shadow:none;min-height:auto}
+  .references-card{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:26px}
+  .rf-edge-tabs{position:static;flex-direction:row;justify-content:center;margin-bottom:8px}
+  .rf-edge-tab{writing-mode:horizontal-tb;transform:none!important;width:auto!important;height:36px;border-radius:3px 3px 0 0;border-left:1px solid rgba(16,26,44,.4);padding:0 8px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#home">Skip to main content</a>
+
+<!-- NAVIGATION -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="brand" href="#home" aria-label="My Literary Journey &mdash; home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+        <path d="M16 7.6c-2.1-1.5-4.9-2.1-7.4-1.9v18.4c2.5-.2 5.3.4 7.4 1.9 2.1-1.5 4.9-2.1 7.4-1.9V5.7c-2.5-.2-5.3.4-7.4 1.9Z"/>
+        <path d="M16 7.6v18.4"/><path d="M4.6 5.9v18.6M27.4 5.9v18.6" opacity=".45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-title">My Literary Journey</span>
+        <span class="brand-sub">Great Books Portfolio</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span id="navToggleLabel">Menu</span>
+    </button>
+    <nav class="nav-menu" id="navMenu" aria-label="Portfolio sections">
+      <ul>
+        <li><a class="nav-link" href="#home" data-nav="home">Home</a></li>
+        <li><a class="nav-link" href="#profile" data-nav="profile">Student Profile</a></li>
+        <li><a class="nav-link" href="#collection" data-nav="desk">Great Books</a></li>
+        <li><a class="nav-link" href="#masterpiece" data-nav="desk">Masterpiece</a></li>
+        <li><a class="nav-link" href="#learned" data-nav="desk">Learning</a></li>
+        <li><a class="nav-link" href="#reflection" data-nav="desk">Reflection</a></li>
+        <li><a class="nav-link" href="#references" data-nav="references">References</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="nav-progress" aria-hidden="true"><span id="readProgress"></span></div>
+</header>
+
+<main id="main">
+
+  <!-- 1. HOMEPAGE -->
+  <section class="section" id="home" aria-labelledby="homeTitle">
+    <div class="wrap">
+      <div class="hero">
+        <div class="hero-left">
+          <p class="eyebrow">Great Books &middot; University of Nueva Caceres</p>
+          <h1 class="hero-title" id="homeTitle">My Literary <em>Journey</em></h1>
+          <p class="hero-sub">A Great Books Digital Portfolio</p>
+          <hr class="hero-rule">
+          <p class="hero-author">Angelaica Mae P. Harochoc</p>
+          <p class="hero-meta">BSIT &middot; 4th Year &middot; Great Books-GEC-GB-NRt</p>
+          <p class="hero-intro">A collection of stories, interpretations, and personal reflections on how literature helps me understand people, culture, and life.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary btn--lg" href="#profile">Explore Profile <span class="arw" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn--ghost btn--lg" href="#collection">Open Literary Desk</a>
+          </div>
+          <div class="hero-exhibit">
+            <span class="label-card"><b>Great Books</b>University of Nueva Caceres</span>
+            <span class="label-card"><b>Seven Works</b>One reader&rsquo;s collection</span>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-frame">
+            <span class="tape tape--a" aria-hidden="true"></span>
+            <span class="tape tape--b" aria-hidden="true"></span>
+            <svg viewBox="0 0 400 476" role="img" aria-labelledby="plateTitle">
+              <title id="plateTitle">Illustrated plate: an open book beneath an arched night sky with stars, a distant ship on the sea, and olive branches</title>
+              <defs>
+                <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0C1729"/><stop offset="52%" stop-color="#17283F"/><stop offset="100%" stop-color="#29405D"/>
+                </linearGradient>
+                <radialGradient id="glowG" cx="50%" cy="26%" r="62%">
+                  <stop offset="0%" stop-color="#C99A36" stop-opacity=".3"/><stop offset="100%" stop-color="#C99A36" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="archClip"><path d="M14 462V152a186 186 0 0 1 372 0v310Z"/></clipPath>
+              </defs>
+              <rect width="400" height="476" fill="#0C1729"/>
+              <g clip-path="url(#archClip)">
+                <rect width="400" height="476" fill="url(#skyG)"/>
+                <rect width="400" height="476" fill="url(#glowG)"/>
+                <g fill="#C99A36" opacity=".8">
+                  <path d="M316 56a33 33 0 1 0 24 55 39 39 0 1 1-24-55Z"/>
+                </g>
+                <g fill="#E3C88F">
+                  <circle cx="66" cy="86" r="1.6" opacity=".85"/><circle cx="104" cy="52" r="1.1" opacity=".65"/>
+                  <circle cx="142" cy="96" r="1.4" opacity=".8"/><circle cx="188" cy="60" r="1" opacity=".55"/>
+                  <circle cx="232" cy="104" r="1.5" opacity=".8"/><circle cx="272" cy="48" r="1.2" opacity=".7"/>
+                  <circle cx="352" cy="128" r="1.3" opacity=".75"/><circle cx="46" cy="150" r="1.1" opacity=".55"/>
+                  <circle cx="96" cy="132" r="1" opacity=".5"/><circle cx="160" cy="140" r="1.2" opacity=".6"/>
+                  <circle cx="212" cy="150" r="1" opacity=".5"/><circle cx="300" cy="106" r="1.4" opacity=".7"/>
+                </g>
+                <g stroke="#C99A36" stroke-width="1" opacity=".85" fill="none">
+                  <path d="M120 44l4 11 11 4-11 4-4 11-4-11-11-4 11-4Z"/>
+                  <path d="M258 132l2.6 7 7 2.6-7 2.6-2.6 7-2.6-7-7-2.6 7-2.6Z"/>
+                </g>
+                <g stroke="#8FA6C0" stroke-width="1" fill="none" opacity=".28" stroke-linecap="round">
+                  <path d="M14 190c34-22 58-8 78-24s40-6 52 6 34 12 52-2"/>
+                  <path d="M230 172c26-16 46-6 62 4s36 6 50-6 30-8 44 2"/>
+                </g>
+                <g stroke="#E3C88F" fill="none" opacity=".55" stroke-linecap="round">
+                  <path d="M14 300h372" stroke-width="1.2"/>
+                </g>
+                <g stroke="#9FB3C9" fill="none" opacity=".34" stroke-width="1" stroke-linecap="round">
+                  <path d="M20 314q20-7 40 0t40 0 40 0 40 0 40 0 40 0 40 0 40 0"/>
+                  <path d="M14 330q22-7 44 0t44 0 44 0 44 0 44 0 44 0 44 0"/>
+                  <path d="M22 348q20-7 40 0t40 0 40 0 40 0 40 0 40 0 40 0 40 0"/>
+                </g>
+                <g fill="#E3C88F" opacity=".8">
+                  <path d="M276 300h40l-7 11h-26Z"/>
+                  <path d="M295 300v-34" stroke="#E3C88F" stroke-width="1.4"/>
+                  <path d="M296 268l22 17-22 8Z" opacity=".85"/>
+                  <path d="M294 268l-16 15 16 7Z" opacity=".55"/>
+                </g>
+                <g stroke="#E3C88F" fill="#16253B" stroke-width="1.3" stroke-linejoin="round">
+                  <path d="M84 398c28-16 62-20 116-10 54-10 88-6 116 10v60c-28-15-62-19-116-9-54-10-88-6-116 9Z"/>
+                  <path d="M200 388v60" fill="none"/>
+                  <path d="M100 408c24-11 52-14 92-7M100 422c24-11 52-14 92-7M100 436c24-11 52-14 92-7" fill="none" opacity=".42"/>
+                  <path d="M300 408c-24-11-52-14-92-7M300 422c-24-11-52-14-92-7M300 436c-24-11-52-14-92-7" fill="none" opacity=".42"/>
+                </g>
+                <g stroke="#C99A36" fill="none" stroke-width="1" opacity=".55" stroke-linecap="round">
+                  <path d="M42 452c8-10 18-16 30-18"/><path d="M52 440c-3-7-2-13 3-18 4 6 4 12-3 18Z"/>
+                  <path d="M60 434c5-6 11-8 18-7-3 6-9 9-18 7Z"/>
+                  <path d="M358 452c-8-10-18-16-30-18"/><path d="M348 440c3-7 2-13-3-18-4 6-4 12 3 18Z"/>
+                  <path d="M340 434c-5-6-11-8-18-7 3 6 9 9 18 7Z"/>
+                </g>
+              </g>
+              <path d="M14 462V152a186 186 0 0 1 372 0v310" fill="none" stroke="#C99A36" stroke-opacity=".55" stroke-width="1.1"/>
+              <rect x="5" y="5" width="390" height="466" fill="none" stroke="#C99A36" stroke-opacity=".28"/>
+            </svg>
+          </div>
+          <p class="hero-note">seven books,<br>one desk</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. STUDENT PROFILE -->
+  <section class="section" id="profile" aria-labelledby="profileTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Exhibit 01 &middot; The Reader</p>
+        <h2 class="section-title" id="profileTitle">Student Profile</h2>
+        <p class="section-sub">The reader behind the collection</p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Draggable School ID on Lanyard -->
+        <div class="profile-id-col">
+          <div class="id-stage" id="idStage">
+            <svg class="lanyard" aria-hidden="true" focusable="false">
+              <path id="strapL" d="" fill="none" stroke="#0E1A2B" stroke-width="11" stroke-linecap="round"/>
+              <path id="strapL2" d="" fill="none" stroke="#243A58" stroke-width="5" stroke-linecap="round"/>
+              <path id="strapL3" d="" fill="none" stroke="#F2C94C" stroke-width="1.3" stroke-dasharray="5 6" stroke-linecap="round" opacity=".8"/>
+              <path id="strapR" d="" fill="none" stroke="#0E1A2B" stroke-width="11" stroke-linecap="round"/>
+              <path id="strapR2" d="" fill="none" stroke="#243A58" stroke-width="5" stroke-linecap="round"/>
+              <path id="strapR3" d="" fill="none" stroke="#F2C94C" stroke-width="1.3" stroke-dasharray="5 6" stroke-linecap="round" opacity=".8"/>
+            </svg>
+            <span class="lanyard-print" aria-hidden="true">UNC &middot; SCIS</span>
+            <span class="id-anchor" aria-hidden="true"></span>
+
+            <div class="id-card" id="idCard" tabindex="0" role="group"
+                 aria-label="Draggable reader profile card for Angelaica Mae P. Harochoc. Drag with pointer, or press Enter or Space to nudge.">
+              <span class="id-clip" aria-hidden="true"></span>
+              <div class="id-head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                  <path d="M12 5.5C10.4 4.4 8.2 3.9 6.2 4v14.3c2-.1 4.2.4 5.8 1.5 1.6-1.1 3.8-1.6 5.8-1.5V4c-2-.1-4.2.4-5.8 1.5Z"/>
+                  <path d="M12 5.5v14.3"/>
+                </svg>
+                <p class="id-school">University of Nueva Caceres</p>
+                <p class="id-school-sub">Great Books &middot; Reader Profile</p>
+              </div>
+
+              <div class="id-photo">
+                <svg viewBox="0 0 200 212" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <circle cx="100" cy="74" r="33" fill="currentColor" opacity=".5"/>
+                  <path d="M100 116c-35 0-60 23-64 54l-2 42h132l-2-42c-4-31-29-54-64-54Z" fill="currentColor" opacity=".4"/>
+                </svg>
+                <img id="idPhotoImg" alt="Portrait photograph of Angelaica Mae P. Harochoc" hidden>
+                <span class="id-photo-hint">Photo asset slot</span>
+              </div>
+
+              <div class="id-body">
+                <p class="id-name">Angelaica Mae P. Harochoc</p>
+                <p class="id-course">Bachelor of Science in Information Technology</p>
+                <div class="id-facts">
+                  <span class="id-fact">BSIT &middot; 4th Year</span>
+                  <span class="id-fact">Great Books-GEC-GB-NRt</span>
+                </div>
+              </div>
+              <div class="id-foot">University of Nueva Caceres</div>
+            </div>
+          </div>
+
+          <div class="id-hint-row">
+            <span class="id-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6v-2.2a1.5 1.5 0 0 1 3 0"/></svg>
+              Drag my ID
+            </span>
+            <span class="id-drag-status" id="idDragStatus" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <!-- Three Separate Pinned Note Cards -->
+        <div class="profile-notes-col">
+          <!-- Card 1: Personal Introduction -->
+          <article class="pinned-card" style="--r:-1.2deg">
+            <div class="card-pin" aria-hidden="true"><svg class="pin-svg" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="pinG" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF7DC"/><stop offset="45%" stop-color="#DBB055"/><stop offset="100%" stop-color="#7A5615"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="10" cy="10" rx="7.5" ry="7.5" fill="url(#pinG)"/>
+  <circle cx="10" cy="10" r="4.2" fill="#F4D990" stroke="#7A5615" stroke-width=".7"/>
+  <circle cx="8.5" cy="8.5" r="1.8" fill="#FFF" opacity=".8"/>
+</svg></div>
+            <div class="card-sticker card-sticker--art" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <defs>
+    <radialGradient id="palG" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#F7EED8"/><stop offset="100%" stop-color="#E2CCA0"/>
+    </radialGradient>
+  </defs>
+  <path d="M22 6C13.2 6 6 13.2 6 22c0 8.8 6.5 15.5 14.5 15.5 2.5 0 3.5-1.5 3.5-3 0-1.2-.5-2.2-.5-3.5 0-2.5 2-4.5 4.5-4.5h3c4.5 0 8-3.5 8-8 0-10.2-7.8-12.5-17.5-12.5Z" fill="url(#palG)" stroke="#8A6B32" stroke-width="1.4"/>
+  <circle cx="14" cy="18" r="2.2" fill="#752F40"/>
+  <circle cx="21" cy="13" r="2.2" fill="#B65B35"/>
+  <circle cx="28" cy="15" r="2.2" fill="#243D35"/>
+  <circle cx="15" cy="27" r="2.2" fill="#C99A36"/>
+  <path d="M33 37L39 19l-4-4-18 6 22 16Z" fill="#2A3E5C" stroke="#17243B" stroke-width="1.2" opacity=".85"/>
+  <path d="M17 21l-4 3 3 1 1-4Z" fill="#C99A36"/>
+</svg></div>
+            <p class="card-text">Hello! I am Angelaica Mae P. Harochoc, a fourth-year Information Technology student at the University of Nueva Caceres. I study how to build systems and software, but I also love stories and art. In my free time, I make digital and traditional art. I like graphic design, and I enjoy drawing in a realistic style. Great Books gave me a chance to read old stories from different parts of the world and see how they still speak to us today.</p>
+          </article>
+
+          <!-- Card 2: Reading Interests and Experiences -->
+          <article class="pinned-card" style="--r:1deg">
+            <div class="card-tape" aria-hidden="true"></div>
+            <div class="card-sticker card-sticker--reading" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <defs>
+    <linearGradient id="bkG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBF2DE"/><stop offset="100%" stop-color="#E6D3B0"/>
+    </linearGradient>
+  </defs>
+  <path d="M22 14c-4.5-3-10-3.5-15-3.2v20c5-.3 10.5.2 15 3.2 4.5-3 10-3.5 15-3.2v-20c-5-.3-10.5.2-15 3.2Z" fill="url(#bkG)" stroke="#752F40" stroke-width="1.4"/>
+  <path d="M22 14v20" stroke="#752F40" stroke-width="1.4"/>
+  <path d="M10 17c3.5-.2 7.5.3 10 2.2M10 22c3.5-.2 7.5.3 10 2.2M10 27c3.5-.2 7.5.3 10 2.2" stroke="#752F40" stroke-width=".9" opacity=".5"/>
+  <path d="M34 17c-3.5-.2-7.5.3-10 2.2M34 22c-3.5-.2-7.5.3-10 2.2M34 27c-3.5-.2-7.5.3-10 2.2" stroke="#752F40" stroke-width=".9" opacity=".5"/>
+  <path d="M22 14v-6c0-1.5 2-3 4-1l2 2" stroke="#C99A36" stroke-width="2"/>
+</svg></div>
+            <p class="card-text">I love ancient and old stories, especially those that teach deep lessons or hide meaning like a riddle. I enjoy thinking about what a story is really trying to say. My love for art also changes how I read. When I read a scene, I like to picture it like a painting, with its colors, faces, and feelings. Before this course, I mostly read stories for fun. Now I also read them to understand people, history, and society.</p>
+          </article>
+
+          <!-- Card 3: Expectations in Great Books -->
+          <article class="pinned-card" style="--r:-0.8deg">
+            <div class="card-pin" aria-hidden="true"><svg class="pin-svg" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="pinG" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF7DC"/><stop offset="45%" stop-color="#DBB055"/><stop offset="100%" stop-color="#7A5615"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="10" cy="10" rx="7.5" ry="7.5" fill="url(#pinG)"/>
+  <circle cx="10" cy="10" r="4.2" fill="#F4D990" stroke="#7A5615" stroke-width=".7"/>
+  <circle cx="8.5" cy="8.5" r="1.8" fill="#FFF" opacity=".8"/>
+</svg></div>
+            <div class="card-sticker card-sticker--stars" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <defs>
+    <radialGradient id="starG" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFF2CE"/><stop offset="100%" stop-color="#E5BE65"/>
+    </radialGradient>
+  </defs>
+  <circle cx="21" cy="20" r="11" fill="url(#starG)" stroke="#8F6C22" stroke-width="1.4"/>
+  <path d="M29 28l7 7" stroke="#1D2D47" stroke-width="2.6"/>
+  <path d="M21 13l1.8 4.2 4.5.4-3.4 3 1 4.4-3.9-2.3-3.9 2.3 1-4.4-3.4-3 4.5-.4L21 13Z" fill="#C99A36" stroke="#8F6C22" stroke-width=".8"/>
+  <circle cx="36" cy="11" r="2.2" fill="#C99A36"/>
+  <path d="M36 6v3M36 13v3M33 11h-3M39 11h3" stroke="#C99A36" stroke-width=".9"/>
+  <circle cx="9" cy="31" r="1.5" fill="#C99A36" opacity=".8"/>
+</svg></div>
+            <p class="card-text">When I started Great Books, I expected to have fun and to learn about literature I did not know yet. I wanted to meet new characters, new cultures, and new ways of thinking. I also hoped to become a better reader who can look deeper than the plot.</p>
+            <p class="card-sign">&mdash; Angelaica</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ONE SHARED LITERARY DESK -->
+  <section class="section" id="desk" aria-labelledby="deskTitle">
+    <!-- Anchor targets for direct links -->
+    <span id="collection" class="desk-anchor" aria-hidden="true"></span>
+    <span id="masterpiece" class="desk-anchor" aria-hidden="true"></span>
+    <span id="learned" class="desk-anchor" aria-hidden="true"></span>
+    <span id="reflection" class="desk-anchor" aria-hidden="true"></span>
+
+    <div class="wrap desk-wrap">
+      <div class="section-head">
+        <p class="eyebrow">Shared Workspace</p>
+        <h2 class="section-title" id="deskTitle">My Literary Desk</h2>
+        <p class="section-sub">Four objects, one shared reading space &mdash; select any book, notebook, or the card stack to open.</p>
+      </div>
+
+      <!-- RESTING DESK VIEW -->
+      <div class="desk-shelf" id="deskResting">
+        <div class="desk-objects">
+          <!-- 1. Great Books Hardcover -->
+          <div class="desk-item">
+            <span class="desk-item-label">Hardcover Anthology</span>
+            <div class="hc-stack" id="hcCoverTrigger" role="button" tabindex="0" aria-label="Open Great Books hardcover anthology">
+              <span class="hc-spine-edges" aria-hidden="true"></span>
+              <span class="hc-ribbon" aria-hidden="true"></span>
+              <div class="hc-cover">
+                <span class="cv-kicker">University of Nueva Caceres</span>
+                <div>
+                  <h3 class="cv-ttl-hc">Great Books</h3>
+                  <p class="cv-sub-hc">Compilation of Seven Literary Analyses<br>4th Year &middot; Great Books-GEC-GB-NRt</p>
+                </div>
+                <span class="cv-au-hc">Angelaica Mae P. Harochoc</span>
+              </div>
+            </div>
+            <button class="btn btn--forest btn--sm" type="button" id="openHcBtn">Open Hardcover <span class="arw" aria-hidden="true">&rarr;</span></button>
+          </div>
+
+          <!-- 2. Masterpiece Burgundy Notebook -->
+          <div class="desk-item">
+            <span class="desk-item-label">Favorite Masterpiece</span>
+            <div class="nb-thumb-stack" id="mpCoverTrigger" role="button" tabindex="0" aria-label="Open My Favorite Literary Masterpiece notebook">
+              <span class="nb-thumb-tape" aria-hidden="true"></span>
+              <div class="nb-thumb">
+                <span class="cv-kicker">Reading Notebook</span>
+                <div>
+                  <h3 class="cv-ttl-nb">My Favorite Literary Masterpiece</h3>
+                  <p class="cv-sub-nb">Voice Out of the Whirlwind &middot; Job 38</p>
+                </div>
+                <span class="cv-au-hc">Angelaica Mae P. Harochoc</span>
+              </div>
+              <span class="nb-thumb-badge" aria-hidden="true">4<br>spreads</span>
+            </div>
+            <button class="btn btn--burgundy btn--sm" type="button" id="openMpBtn">Open Notebook <span class="arw" aria-hidden="true">&rarr;</span></button>
+          </div>
+
+          <!-- 3. Personal Reflection Tabbed Notebook -->
+          <div class="desk-item">
+            <span class="desk-item-label">Personal Reflection</span>
+            <div class="nb-thumb-stack" id="rfCoverTrigger" role="button" tabindex="0" aria-label="Open Personal Reflection notebook with category tabs">
+              <div class="rf-thumb-tabs" aria-hidden="true">
+                <span class="rf-thumb-tab rf-tab--0"></span>
+                <span class="rf-thumb-tab rf-tab--1"></span>
+                <span class="rf-thumb-tab rf-tab--2"></span>
+                <span class="rf-thumb-tab rf-tab--3"></span>
+                <span class="rf-thumb-tab rf-tab--4"></span>
+              </div>
+              <div class="rf-thumb">
+                <span class="cv-kicker">Reading Journal</span>
+                <div>
+                  <h3 class="cv-ttl-nb">Personal Reflection</h3>
+                  <p class="cv-sub-nb">Five notes &middot; one closing thought</p>
+                </div>
+                <span class="cv-au-hc">Angelaica Mae P. Harochoc</span>
+              </div>
+            </div>
+            <button class="btn btn--sm" style="--btn-bg:var(--orange);--btn-fg:#FFF;--btn-bd:var(--orange-deep)" type="button" id="openRfBtn">Open Notebook <span class="arw" aria-hidden="true">&rarr;</span></button>
+          </div>
+
+          <!-- 4. Summary of Learning Index-Card Stack -->
+          <div class="desk-item">
+            <span class="desk-item-label">Learning Stack</span>
+            <div class="ic-thumb-stack" id="icCoverTrigger" role="button" tabindex="0" aria-label="Open Summary of Learning index-card stack">
+              <div class="ic-thumb-tabs" aria-hidden="true">
+                <span class="ic-thumb-tab rf-tab--0">Per.</span>
+                <span class="ic-thumb-tab rf-tab--1">Lens</span>
+                <span class="ic-thumb-tab rf-tab--2">Life</span>
+                <span class="ic-thumb-tab rf-tab--3">Skill</span>
+              </div>
+              <div class="ic-thumb">
+                <h4 class="cv-ic-ttl">Summary of Learning</h4>
+                <ul class="cv-ic-list">
+                  <li style="background:rgba(201,154,54,.18);color:#583D0D"><span>&bull;</span> Periods &amp; Cultures</li>
+                  <li style="background:rgba(117,47,64,.18);color:#4E1624"><span>&bull;</span> Literary Lenses</li>
+                  <li style="background:rgba(36,61,53,.18);color:#192E26"><span>&bull;</span> Literature &amp; Life</li>
+                  <li style="background:rgba(182,91,53,.18);color:#5E2812"><span>&bull;</span> Skills Developed</li>
+                </ul>
+                <span style="font-family:var(--sans);font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-55)">Handheld Card Stack</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--sm" type="button" id="openIcBtn">Open Index Cards <span class="arw" aria-hidden="true">&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHARED READING STAGE -->
+      <div class="stage-wrap" id="deskStage" hidden>
+        <!-- Top Object Switcher Bar -->
+        <div class="stage-bar">
+          <div class="obj-selector" role="tablist" aria-label="Switch literary object">
+            <button class="obj-tab" type="button" data-desk="collection" id="tabObjCollection" aria-pressed="false">📗 Great Books</button>
+            <button class="obj-tab" type="button" data-desk="masterpiece" id="tabObjMasterpiece" aria-pressed="false">📕 Masterpiece</button>
+            <button class="obj-tab" type="button" data-desk="reflection" id="tabObjReflection" aria-pressed="false">📙 Reflection</button>
+            <button class="obj-tab" type="button" data-desk="learned" id="tabObjLearned" aria-pressed="false">📇 Learning Cards</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:.6rem">
+            <span class="stage-state" id="stageProgress">Contents</span>
+            <button class="btn btn--sm btn--ghost" type="button" id="closeStageBtn">&times; Close to Desk</button>
+          </div>
+        </div>
+
+        <!-- OBJECT 1: GREAT BOOKS HARDCOVER VIEW -->
+        <div class="reading-obj" id="objCollection" hidden>
+          <div class="book-shell book-shell--hc">
+            <div class="spread" id="hcSpread">
+              <div class="page page--left" id="hcPageLeft"></div>
+              <div class="page page--right" id="hcPageRight"></div>
+            </div>
+          </div>
+          <div class="stage-foot-bar">
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--ghost" type="button" id="hcPrevWork" hidden disabled>&larr; Previous Work</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="hcBackToIndex" hidden>Back to Collection Index</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="hcPrevSpread">&larr; Previous Page</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="hcNextSpread">Next Page &rarr;</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="hcNextWork" hidden>Next Work &rarr;</button>
+            </div>
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--burgundy" type="button" id="readFullTrigger" hidden>Read in Full &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OBJECT 2: FAVORITE MASTERPIECE VIEW -->
+        <div class="reading-obj" id="objMasterpiece" hidden>
+          <div class="book-shell book-shell--burgundy">
+            <div class="spread nb-ruled" id="mpSpread">
+              <div class="page page--left" id="mpPageLeft"></div>
+              <div class="page page--right" id="mpPageRight"></div>
+            </div>
+          </div>
+          <div class="stage-foot-bar">
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--ghost" type="button" id="mpPrevSpread">&larr; Previous Spread</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="mpNextSpread">Next Spread &rarr;</button>
+            </div>
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--forest" type="button" id="mpJumpWorkBtn">Read Work 05 Analysis in Great Books &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OBJECT 3: PERSONAL REFLECTION TABBED VIEW -->
+        <div class="reading-obj" id="objReflection" hidden>
+          <div class="rf-spread-wrap">
+            <!-- 5 Right-Edge Category Tabs -->
+            <div class="rf-edge-tabs" role="tablist" aria-label="Reflection category tabs">
+              <button class="rf-edge-tab rf-tab--0" type="button" role="tab" data-rf-tab="0" aria-selected="true">Growth</button>
+              <button class="rf-edge-tab rf-tab--1" type="button" role="tab" data-rf-tab="1" aria-selected="false">Challenges</button>
+              <button class="rf-edge-tab rf-tab--2" type="button" role="tab" data-rf-tab="2" aria-selected="false">My Lens</button>
+              <button class="rf-edge-tab rf-tab--3" type="button" role="tab" data-rf-tab="3" aria-selected="false">Realizations</button>
+              <button class="rf-edge-tab rf-tab--4" type="button" role="tab" data-rf-tab="4" aria-selected="false">Moving Forward</button>
+            </div>
+
+            <div class="book-shell book-shell--orange">
+              <div class="spread nb-ruled" id="rfSpread">
+                <div class="page page--left" id="rfPageLeft"></div>
+                <div class="page page--right" id="rfPageRight"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage-foot-bar">
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--ghost" type="button" id="rfPrevSpread">&larr; Previous Note</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="rfNextSpread">Next Note &rarr;</button>
+            </div>
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--ghost" type="button" id="rfFontBtn" aria-pressed="false">Use Standard Font</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="rfAllBtn">View All Reflections</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OBJECT 4: SUMMARY OF LEARNING INDEX-CARD STACK VIEW -->
+        <div class="reading-obj" id="objLearned" hidden>
+          <div class="card-stack-stage">
+            <div class="ic-tabs-bar" role="tablist" aria-label="Index card categories">
+              <button class="ic-tab-btn" type="button" role="tab" data-ic-tab="0" aria-selected="true">Overview</button>
+              <button class="ic-tab-btn" type="button" role="tab" data-ic-tab="1" aria-selected="false">Periods &amp; Cultures</button>
+              <button class="ic-tab-btn" type="button" role="tab" data-ic-tab="2" aria-selected="false">Literary Lenses</button>
+              <button class="ic-tab-btn" type="button" role="tab" data-ic-tab="3" aria-selected="false">Literature &amp; Life</button>
+              <button class="ic-tab-btn" type="button" role="tab" data-ic-tab="4" aria-selected="false">Skills Developed</button>
+            </div>
+
+            <div class="index-card" id="indexCardDisplay">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+          <div class="stage-foot-bar">
+            <div class="stage-foot-group">
+              <button class="btn btn--sm btn--ghost" type="button" id="icPrevCard">&larr; Previous Card</button>
+              <button class="btn btn--sm btn--ghost" type="button" id="icNextCard">Next Card &rarr;</button>
+            </div>
+            <span class="stage-state" id="icCardCount">Card 1 of 5</span>
+          </div>
+        </div>
+
+        <!-- Dismissible first-use tip -->
+        <div class="turn-toast" id="turnToast">
+          <span>&bull; Tip: Click anywhere on the left or right page to turn, or use your keyboard arrow keys (&larr; / &rarr;).</span>
+          <button type="button" id="dismissToast" aria-label="Dismiss hint">&times;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMPACT REFERENCES AND CREDITS -->
+  <section class="section section--tight" id="references" aria-labelledby="referencesTitle">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <p class="eyebrow">Colophon</p>
+        <h2 class="section-title" id="referencesTitle">References and Credits</h2>
+        <p class="section-sub">Works cited, historical sources, and technical assets</p>
+      </div>
+
+      <div class="references-card">
+        <!-- Col 1: Literary Works -->
+        <div>
+          <h3 class="ref-col-title">Literary Works &amp; Editions</h3>
+          <ol class="ref-compact-list">
+            <li>
+              <strong>The Tale of Genji</strong> &middot; Murasaki Shikibu
+              <p class="ref-desc">Translations by Waley, Seidensticker, Tyler, Washburn. Library edition consulted.</p>
+              <div class="ref-links"><a href="https://www.britannica.com/topic/The-Tale-of-Genji" target="_blank" rel="noopener noreferrer">Britannica</a> &middot; <a href="https://www.worldhistory.org/Tale_of_Genji/" target="_blank" rel="noopener noreferrer">World History Encyclopedia</a></div>
+            </li>
+            <li>
+              <strong>Pride and Prejudice</strong> &middot; Jane Austen (1813)
+              <div class="ref-links"><a href="https://gutenberg.org/ebooks/1342" target="_blank" rel="noopener noreferrer">Project Gutenberg (Free full text)</a> &middot; <a href="https://www.britannica.com/topic/Pride-and-Prejudice" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+            <li>
+              <strong>Les Mis&eacute;rables</strong> &middot; Victor Hugo (1862)
+              <div class="ref-links"><a href="https://www.gutenberg.org/ebooks/135" target="_blank" rel="noopener noreferrer">Project Gutenberg (Free full text)</a> &middot; <a href="https://www.britannica.com/topic/Les-Miserables-novel-by-Hugo" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+            <li>
+              <strong>To Kill a Mockingbird</strong> &middot; Harper Lee (1960)
+              <p class="ref-desc">Protected by copyright; print edition consulted.</p>
+              <div class="ref-links"><a href="https://penguin.co.uk/books/1088099/to-kill-a-mockingbird/9780099466734" target="_blank" rel="noopener noreferrer">Penguin Publisher Page</a> &middot; <a href="https://britannica.com/topic/To-Kill-a-Mockingbird" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+            <li>
+              <strong>Voice Out of the Whirlwind (Job 38)</strong> &middot; Book of Job
+              <div class="ref-links"><a href="https://biblehub.com/nasb_/job/38.htm" target="_blank" rel="noopener noreferrer">Bible Hub (NASB)</a> &middot; <a href="https://bible.eu/parallel/niv/kjv/job/38/" target="_blank" rel="noopener noreferrer">NIV / KJV Parallel</a> &middot; <a href="https://www.britannica.com/topic/The-Book-of-Job" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+            <li>
+              <strong>The Iliad</strong> &middot; Homer
+              <div class="ref-links"><a href="https://gutenberg.org/ebooks/2199" target="_blank" rel="noopener noreferrer">Project Gutenberg (Butler)</a> &middot; <a href="https://www.britannica.com/topic/Iliad-epic-poem-by-Homer" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+            <li>
+              <strong>The Odyssey</strong> &middot; Homer
+              <div class="ref-links"><a href="https://gutenberg.org/ebooks/1727" target="_blank" rel="noopener noreferrer">Project Gutenberg (Butler)</a> &middot; <a href="https://britannica.com/topic/Odyssey-epic-by-Homer" target="_blank" rel="noopener noreferrer">Britannica</a></div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Col 2: Background Sources & Artwork -->
+        <div>
+          <h3 class="ref-col-title">Background Sources</h3>
+          <ul class="ref-compact-list">
+            <li>
+              <strong>Murasaki Shikibu and Heian court life</strong>
+              <div class="ref-links"><a href="https://explore.britannica.com/explore/100women/profiles/murasaki-shikibu" target="_blank" rel="noopener noreferrer">Britannica &mdash; Murasaki Shikibu</a></div>
+            </li>
+            <li>
+              <strong>The Scottsboro Case</strong>
+              <p class="ref-desc">Historical context for the trial in To Kill a Mockingbird.</p>
+              <div class="ref-links"><a href="https://www.britannica.com/print/article/529756" target="_blank" rel="noopener noreferrer">Britannica &mdash; Scottsboro Case</a></div>
+            </li>
+            <li>
+              <strong>Homer and the Greek Epics</strong>
+              <div class="ref-links"><a href="https://www.britannica.com/art/epic/The-Greek-epic" target="_blank" rel="noopener noreferrer">Britannica &mdash; The Greek Epic</a></div>
+            </li>
+          </ul>
+
+          <h3 class="ref-col-title" style="margin-top:1.4rem">Original Illustrations</h3>
+          <p class="ref-desc">All eight illustrations in this portfolio &mdash; the seven collection covers and the featured Job 38 plate &mdash; are original vector artwork drawn for this project as inline SVG. No third-party photos are used.</p>
+        </div>
+
+        <!-- Col 3: Typography & Technical Assets -->
+        <div>
+          <h3 class="ref-col-title">Typography &amp; Technical Assets</h3>
+          <ul class="ref-compact-list">
+            <li><strong>Cormorant Garamond</strong> &middot; Titles and display serif type.</li>
+            <li><strong>Inter</strong> &middot; Body text and interface labels.</li>
+            <li><strong>Caveat</strong> &middot; Handwritten annotations and reflection notes.</li>
+          </ul>
+          <p class="ref-desc" style="margin-top:.7rem"><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a> &middot; Open-licensed typefaces.</p>
+          <p class="ref-desc" style="margin-top:.7rem">Custom interface, typography, animation, and interaction code written specifically for this digital portfolio. Completely self-contained client-side application with zero external dependencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="siteFooter">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-h">Portfolio</p>
+        <p class="footer-title">My Literary Journey: A Great Books Digital Portfolio</p>
+        <p class="footer-name">Angelaica Mae P. Harochoc</p>
+        <p class="footer-meta">Bachelor of Science in Information Technology<br>4th Year &middot; Great Books-GEC-GB-NRt<br>University of Nueva Caceres</p>
+      </div>
+      <div>
+        <p class="footer-h">Sections</p>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Student Profile</a></li>
+          <li><a href="#collection">Great Books</a></li>
+          <li><a href="#masterpiece">Favorite Masterpiece</a></li>
+          <li><a href="#learned">Summary of Learning</a></li>
+          <li><a href="#reflection">Personal Reflection</a></li>
+          <li><a href="#references">References &amp; Credits</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Colophon</p>
+        <ul class="footer-links">
+          <li><a href="#references">References and Credits</a></li>
+          <li><a href="#home">Back to Top &uarr;</a></li>
+        </ul>
+        <p class="footer-meta" style="margin-top:.9rem">Seven analyses written for Great Books, presented as physical books and notebooks on one shared literary desk.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Great Books &middot; University of Nueva Caceres</span>
+      <span><a href="#home">Back to Top &uarr;</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- 7. REPAIRED "READ IN FULL" OVERLAY -->
+<div class="reader" id="fullReader" hidden>
+  <div class="reader-panel" role="dialog" aria-modal="true" aria-labelledby="readerTitle" aria-describedby="readerSub">
+    <div class="reader-bar">
+      <div>
+        <p class="reader-kicker" id="readerKicker">My Literary Analysis</p>
+        <h2 class="reader-title" id="readerTitle">Reading view</h2>
+        <p class="reader-sub" id="readerSub"></p>
+      </div>
+      <button class="btn btn--sm" type="button" id="readerBack">&larr; Back to the book</button>
+    </div>
+    <div class="reader-body" id="readerBody"></div>
+    <div class="reader-foot">
+      <span class="reader-sub" id="readerFoot"></span>
+      <button class="btn btn--sm btn--primary" type="button" id="readerBack2">Return to Great Books</button>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW ALL REFLECTIONS MODAL -->
+<div class="all-modal" id="allRfModal" hidden>
+  <div class="all-modal-panel" role="dialog" aria-modal="true" aria-labelledby="allRfTitle">
+    <div class="reader-bar">
+      <div>
+        <p class="reader-kicker">Personal Reflection Journal</p>
+        <h2 class="reader-title" id="allRfTitle">All Five Reflections</h2>
+        <p class="reader-sub">Angelaica Mae P. Harochoc &middot; Great Books</p>
+      </div>
+      <button class="btn btn--sm" type="button" id="allRfClose">&times; Close</button>
+    </div>
+    <div class="all-grid" id="allRfGrid"></div>
+  </div>
+</div>
+
+<p class="sr-only" id="globalLive" role="status" aria-live="polite"></p>
+
+<!-- CORE SCRIPT -->
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- Motion preferences ---------- */
+  var MQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var state = { reduce: MQ.matches };
+  function syncMotion(){ state.reduce = MQ.matches; }
+  if (MQ.addEventListener) MQ.addEventListener('change', syncMotion);
+  else if (MQ.addListener) MQ.addListener(syncMotion);
+
+  var MLJ = window.MLJ = window.MLJ || {};
+  MLJ.reduceMotion = function(){ return state.reduce; };
+
+  var live = document.getElementById('globalLive');
+  MLJ.announce = function(msg){
+    if (!live) return;
+    live.textContent = '';
+    setTimeout(function(){ live.textContent = msg; }, 60);
+  };
+  MLJ.focusEl = function(el){
+    if (!el) return;
+    try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+  };
+
+  /* ---------- Extract Data & Motifs ---------- */
+  var MOTIF = {
+          genji: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><rect x="12" y="16" width="76" height="66"/><path d="M24 16v66M36 16v66M48 16v66M60 16v66M72 16v66" stroke-width=".5" opacity=".5"/><path d="M12 32h76M12 48h76" stroke-width=".5" opacity=".35"/><circle cx="34" cy="26" r="5.5"/><path d="M18 78c10-4 16-12 18-22"/><circle cx="40" cy="48" r="2.6"/><circle cx="36" cy="58" r="2"/><circle cx="33" cy="68" r="1.6"/><path d="M78 42c-4 6-6 12-6 18" opacity=".7"/></svg>',
+          pp: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M18 52h64v34H18z"/><path d="M14 52 50 27l36 25"/><path d="M42 86V64h16v22"/><rect x="24" y="60" width="10" height="10"/><rect x="66" y="60" width="10" height="10"/><path d="M28 92h44" opacity=".5"/><path d="M84 38c-7 4-11 10-13 18"/><path d="M86 32c-1-6-5-10-11-10 0 6 4 10 11 10Z" opacity=".85"/></svg>',
+          lesmis: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M50 34v48"/><path d="M38 30h24v16H38z"/><path d="M44 30v-6h12v6"/><path d="M50 24v-6"/><path d="M26 82h48"/><path d="M33 82l8-11 8 11"/><path d="M51 82l8-13 8 13" opacity=".8"/><path d="M30 20l-6-6M70 20l6-6" opacity=".45"/></svg>',
+          mockingbird: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M50 90V48"/><path d="M50 62c-12-4-20-12-24-24"/><path d="M50 68c12-4 20-12 24-24"/><path d="M50 48c-8-8-10-18-8-26"/><circle cx="50" cy="30" r="17" opacity=".32"/><path d="M66 28c5-3 10-1 11 4-4 3-9 2-11-4Z"/><path d="M18 92h38" opacity=".5"/></svg>',
+          job: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M52 86c-14-2-22-12-22-24 0-10 7-18 17-19"/><path d="M47 43c-9 0-16 7-16 15 0 9 7 16 16 16"/><path d="M40 58c0-5 4-9 9-9"/><path d="M74 20l2.4 6.6L83 29l-6.6 2.4L74 38l-2.4-6.6L65 29l6.6-2.4Z"/><circle cx="24" cy="26" r="1.4"/><circle cx="36" cy="14" r="1"/><circle cx="88" cy="52" r="1.2"/><path d="M12 92q10-6 20 0t20 0 20 0" opacity=".55"/></svg>',
+          iliad: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M28 58c0-16 10-28 22-28s22 12 22 28"/><path d="M28 58c0 12 6 18 13 20l4 10"/><path d="M72 58c0 12-6 18-13 20l-4 10"/><path d="M50 30c-3-9-1-15 4-19 5 4 7 10 4 19"/><path d="M28 50c8-4 15-6 22-6s14 2 22 6"/><path d="M38 64h6M56 64h6"/><path d="M20 86c7 4 16 6 30 6s23-2 30-6" opacity=".45"/></svg>',
+          odyssey: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M22 62h56l-8 13H30Z"/><path d="M50 62V28"/><path d="M50 32c10 4 15 10 15 16H50Z"/><path d="M10 88q12-6 24 0t24 0 24 0" opacity=".55"/><circle cx="78" cy="32" r="9" opacity=".7"/><path d="M78 25v4M78 35v4M71 32h4M81 32h4" opacity=".7"/></svg>'
+        };
+  var WORKS = [
+          {
+            id:'genji', num:'01', title:'The Tale of Genji', author:'Murasaki Shikibu', authorShort:'Murasaki Shikibu',
+            lens:'Historical / Contextual Lens', cv:'#CBB794', ci:'#6F3A45', motif:MOTIF.genji,
+            desc:'A portrait of love, court life, beauty, and impermanence in Heian Japan.',
+            overview:'Written in the early 1000s in Heian Japan and often called the first novel in the world, The Tale of Genji follows Hikaru Genji, the handsome son of an emperor who cannot inherit the throne because of court politics. His life of love affairs and court ceremony becomes a portrait of a society ruled by rank, manners, and beauty \u2014 and of the women who move through it with very little control over their own lives.',
+            figures:[
+              {n:'Hikaru Genji', d:'the emperor\u2019s son, kept from the throne by court politics'},
+              {n:'Lady Murasaki', d:'one of the noblewomen in Genji\u2019s life'},
+              {n:'Lady Rokuj\u014d', d:'a noblewoman who suffers in silence'},
+              {n:'Lady Aoi', d:'another noblewoman bound by the rules of the court'},
+              {n:'Murasaki Shikibu', d:'the author, a lady-in-waiting who saw this world herself'}
+            ],
+            themes:['Rank and marriage as power','Women\u2019s silence','Mono no aware: the sadness of impermanence','Buddhist ideas of fading beauty','The closed world of the court'],
+            lensIntro:'The historical / contextual lens reads a text through the time, place, and culture that produced it. Here that means Heian court politics, the Fujiwara strategy of marrying daughters to emperors, the kana script used by women, and Buddhist ideas about impermanence.',
+            analysis:[
+              'The Tale of Genji was written in the early 1000s in Japan, during the Heian period. It is often called the first novel in the world. To understand this story, we need to understand the time and place where it was written. Life in the Heian court was full of rank, manners, and beauty. Powerful families, like the Fujiwara, controlled the government by marrying their daughters to the emperor. This is why marriage and love in the story are never only about feelings. They are also about power and position.',
+              'The story follows Hikaru Genji, the handsome son of an emperor. He cannot become emperor because of court politics, so he spends his life in love affairs and court life. These affairs show how the nobles lived. Men could have many partners, while women had to wait in their homes behind screens and curtains. Many women in the story, such as Lady Murasaki, Lady Rokujo, and Lady Aoi, suffer silently because they have little control over their lives.',
+              'The author, Murasaki Shikibu, was a lady-in-waiting at the court. She saw this world with her own eyes. She wrote in the Japanese kana script, which was used by women at that time, while men wrote in Chinese. Because of this, her story gives us the point of view of a woman inside the palace.',
+              'The story is also shaped by Buddhist ideas. The feeling of \u201cmono no aware,\u201d which is a gentle sadness about things that do not last, appears again and again. Beauty fades, love ends, and people die. By the end, Genji himself passes away, and the story continues with sadder and more serious tones.',
+              'In conclusion, the historical lens shows that The Tale of Genji is not only a love story. It is a picture of Heian court life, its rules, its beauty, and its quiet sadness.'
+            ],
+            refs:[{l:'Britannica \u2014 The Tale of Genji',u:'https://www.britannica.com/topic/The-Tale-of-Genji'},{l:'World History Encyclopedia',u:'https://www.worldhistory.org/Tale_of_Genji/'}]
+          },
+          {
+            id:'pride', num:'02', title:'Pride and Prejudice', author:'Jane Austen', authorShort:'Jane Austen',
+            lens:'Feminist Lens', cv:'#C6C8A9', ci:'#3E5238', motif:MOTIF.pp,
+            desc:'A story of marriage, social expectations, judgment, and a woman\u2019s right to choose.',
+            overview:'Published in 1813, Pride and Prejudice follows the five Bennet sisters, whose family home is entailed \u2014 it can pass only to a male heir. With no sons, marriage becomes a question of survival as much as love. Elizabeth Bennet\u2019s refusals of Mr. Collins and of Mr. Darcy, and her eventual marriage to Darcy on her own terms, turn a courtship plot into an argument about what a woman is allowed to decide.',
+            figures:[
+              {n:'Elizabeth Bennet', d:'smart, funny, and brave enough to speak her mind'},
+              {n:'Mr. Darcy', d:'proud, wealthy, and changed by Elizabeth\u2019s honesty'},
+              {n:'Mr. Collins', d:'the cousin who will inherit the Bennet home'},
+              {n:'Charlotte Lucas', d:'marries for safety rather than love'},
+              {n:'Lydia Bennet', d:'runs away with Wickham and nearly ruins the family name'},
+              {n:'Jane Bennet', d:'hopes for a loving marriage but hides her feelings'},
+              {n:'Mrs. Bennet', d:'obsessed with marrying off her daughters'}
+            ],
+            themes:['Marriage as economics','Entailment and security','A woman\u2019s right to refuse','Pride, prejudice, and self-knowledge','Respect as the basis of love'],
+            lensIntro:'A feminist lens looks at how a story shows the lives, limits, and strength of women. Applied to Pride and Prejudice, it asks who is allowed to choose, who must marry for safety, and what Elizabeth\u2019s refusals cost her.',
+            analysis:[
+              'A feminist lens looks at how a story shows the lives, limits, and strength of women. Pride and Prejudice, published in 1813, is a good example because it shows how little choice women had in England at that time. Women of the middle and upper classes could not easily work or own property. The Bennet family house is \u201centailed,\u201d which means it can only be inherited by a male relative. Since the Bennets have five daughters and no sons, the girls could lose their home and security after their father dies. This is why Mrs. Bennet worries so much about getting her daughters married.',
+              'The story shows different choices women make under this pressure. Charlotte Lucas marries Mr. Collins, even though she does not love him, because she wants a safe future. Lydia runs away with Wickham and nearly ruins her family\u2019s name. Jane hopes for a loving marriage but is afraid to show her feelings. Each woman shows a different way of living in a world that gives her few options.',
+              'Elizabeth Bennet stands out. She is smart, funny, and brave enough to speak her mind. She refuses Mr. Collins even though he could save her family\u2019s home. She also refuses Mr. Darcy the first time because of his pride and his insult to her family. At that time, a woman who said no to a rich man was taking a big risk. Elizabeth shows that a woman can have her own mind and her own standards.',
+              'She finally marries Darcy, but only after both of them grow. Darcy learns to be humble, and Elizabeth learns to see her own mistakes. Their marriage is built on respect and understanding, not only money.',
+              'Some readers say the ending is still a marriage plot. But a feminist reading shows that Elizabeth chooses her husband for her own reasons. The novel quietly says that women deserve respect, a voice, and the right to choose.'
+            ],
+            refs:[{l:'Project Gutenberg \u2014 full text',u:'https://gutenberg.org/ebooks/1342'},{l:'Britannica \u2014 Pride and Prejudice',u:'https://www.britannica.com/topic/Pride-and-Prejudice'}]
+          },
+          {
+            id:'lesmis', num:'03', title:'Les Mis\u00e9rables', author:'Victor Hugo', authorShort:'Victor Hugo',
+            lens:'Marxist / Socioeconomic Lens', cv:'#C8B69C', ci:'#4A3D2A', motif:MOTIF.lesmis,
+            desc:'A story of poverty, punishment, mercy, and the struggle for a fairer society.',
+            overview:'Published in 1862 and set in early nineteenth-century France, Les Mis\u00e9rables follows Jean Valjean from nineteen years in prison for stealing a loaf of bread to a life permanently marked by his yellow convict\u2019s passport. Around him, Fantine, Cosette, the Th\u00e9nardiers, Gavroche, and Javert trace the machinery of a society that crushes poor people and then blames them for their suffering.',
+            figures:[
+              {n:'Jean Valjean', d:'a convict who is never allowed to begin again'},
+              {n:'Fantine', d:'a single mother who pays for everything'},
+              {n:'Cosette', d:'Fantine\u2019s daughter, treated as a servant'},
+              {n:'The Th\u00e9nardiers', d:'people who profit from the poor'},
+              {n:'Gavroche', d:'a child of the Paris streets who still helps others'},
+              {n:'Javert', d:'the law that protects the system, until mercy breaks him'}
+            ],
+            themes:['Poverty and crime','Law without mercy','Class and money','The sacrifice of the poor','The demand for a fairer society'],
+            lensIntro:'A Marxist / socioeconomic lens looks at how money, class, and power shape people\u2019s lives \u2014 who owns, who labours, who is punished, and who escapes the consequences.',
+            analysis:[
+              'A Marxist lens looks at how money, class, and power shape people\u2019s lives. Les Mis\u00e9rables, published in 1862, is full of these ideas. The story takes place in France in the early 1800s, where the rich and the poor lived in very different worlds. Hugo shows how a society can crush poor people and then blame them for their suffering.',
+              'Jean Valjean is the best example. He steals a loaf of bread to feed his sister\u2019s hungry children and is sent to prison for nineteen years. After he is freed, his yellow passport marks him as a convict, so no one will hire him or even give him a place to sleep. The system does not give him a way to start again. It treats him as a criminal forever.',
+              'Fantine\u2019s story is even sadder. She is a single mother who works in a factory. When the other workers find out she has a child, she is fired. To pay for her daughter Cosette\u2019s care, she sells her hair, her teeth, and finally her body. The people with money and power do not suffer the consequences. The poor woman pays for everything.',
+              'The Th\u00e9nardiers show how some people use the poor for profit. They take money from Fantine and treat Cosette like a servant. The children of Paris, like Gavroche, live on the streets and still help others. Hugo is saying that poverty, not bad character, pushes people into crime.',
+              'Javert represents the law that protects the system. He believes that rules must be followed no matter what. But in the end, he cannot justify his own beliefs when Valjean shows him mercy. This shows that strict law without kindness is not real justice.',
+              'The student uprising at the barricades also shows the anger of the poor against an unfair order. Through these events, the Marxist lens reveals that the novel is a strong call for a fairer society where no one is thrown away because of poverty.'
+            ],
+            refs:[{l:'Project Gutenberg \u2014 full text',u:'https://www.gutenberg.org/ebooks/135'},{l:'Britannica \u2014 Les Mis\u00e9rables',u:'https://www.britannica.com/topic/Les-Miserables-novel-by-Hugo'}]
+          }
+        ];
+
+        WORKS.push(
+          {
+            id:'mockingbird', num:'04', title:'To Kill a Mockingbird', author:'Harper Lee', authorShort:'Harper Lee',
+            lens:'Historical / Contextual Lens', cv:'#C4C1AC', ci:'#34473A', motif:MOTIF.mockingbird,
+            desc:'A child\u2019s view of racism, injustice, courage, and empathy in the American South.',
+            overview:'Published in 1960 but set in Maycomb, Alabama, in the 1930s, To Kill a Mockingbird is narrated by Scout Finch while her father Atticus defends Tom Robinson, a Black man accused of hurting a white woman. The novel holds two eras together: the Depression and Jim Crow South of the story, and the growing Civil Rights Movement of the year it appeared.',
+            figures:[
+              {n:'Scout Finch', d:'the child narrator who learns the rules of her town'},
+              {n:'Jem Finch', d:'her older brother, hurt by seeing justice fail'},
+              {n:'Atticus Finch', d:'the father who defends Tom Robinson'},
+              {n:'Tom Robinson', d:'a Black man wrongly accused'},
+              {n:'Mayella Ewell', d:'the white woman who accuses him'},
+              {n:'Boo Radley', d:'judged by rumour, not by fact'},
+              {n:'The Cunninghams and the Ewells', d:'two poor families on very different paths'}
+            ],
+            themes:['Racism and Jim Crow','A verdict against the evidence','Empathy and \u201cwalking in their shoes\u201d','Childhood and disillusionment','Rumour, fear, and the innocent'],
+            lensIntro:'The historical / contextual lens asks what a text could only mean in its own moment. Here that means the Great Depression, the Jim Crow laws, the Scottsboro case of the 1930s, and the Civil Rights Movement of 1960.',
+            analysis:[
+              'To Kill a Mockingbird was published in 1960, but it is set in the 1930s in Maycomb, Alabama. Both times are very important. In the 1930s, America was in the Great Depression, and many families were poor. The Southern United States also followed the Jim Crow laws, which kept Black and white people separated and gave Black people fewer rights. In 1960, when the book came out, the Civil Rights Movement was growing. This means the story spoke directly to a country that was struggling with racism.',
+              'The Depression is seen in the Finch family and their neighbors. Many people pay Atticus with food instead of money. The Cunninghams are proud but poor, and the Ewells live in even worse conditions. Hard times made some people hold on to their pride, and made others look for someone to blame.',
+              'The trial of Tom Robinson is the heart of the book. Tom, a Black man, is accused of hurting a white woman, Mayella Ewell. Atticus proves that Tom could not have done it. Still, the all-white jury finds him guilty. This reflects real history. A famous example is the Scottsboro case in the 1930s, where young Black men in Alabama were wrongly accused and judged unfairly. The story shows that, at that time, a person\u2019s race could matter more than the truth.',
+              'Through Scout\u2019s eyes, we also see how children slowly learn the rules of an unfair society. Scout and Jem begin by believing in justice, and they are hurt when they see it fail. Atticus teaches them to understand others by \u201cwalking in their shoes.\u201d Boo Radley, who is judged by rumors, shows how fear and gossip can hurt innocent people too.',
+              'The historical lens shows that the novel is more than a story about a small town. It is a mirror of real American history and a challenge to readers to look at their own prejudice.'
+            ],
+            refs:[{l:'Penguin \u2014 publisher page',u:'https://penguin.co.uk/books/1088099/to-kill-a-mockingbird/9780099466734'},{l:'Britannica \u2014 To Kill a Mockingbird',u:'https://britannica.com/topic/To-Kill-a-Mockingbird'}]
+          },
+          {
+            id:'job', num:'05', title:'Voice Out of the Whirlwind', author:'Job 38 \u00b7 from the Book of Job, Hebrew Bible \u00b7 author unknown', authorShort:'Book of Job',
+            lens:'Formalist Lens', cv:'#B9BFCE', ci:'#22314B', motif:MOTIF.job,
+            desc:'A poetic encounter with suffering, creation, and the limits of human understanding.',
+            overview:'Job 38 is the moment in the Book of Job when God finally answers \u2014 not with an explanation, but with questions. After many chapters of argument between Job and his friends about why a good man suffers, the writing turns to creation: the founding of the earth, the limits of the sea, the morning stars, snow, lions, ravens, and mountain goats.',
+            figures:[
+              {n:'Job', d:'a good man who loses almost everything and asks why'},
+              {n:'God', d:'who answers out of the whirlwind, with questions'},
+              {n:'Job\u2019s three friends', d:'who insist he must have deserved it'},
+              {n:'The morning stars', d:'creation itself, singing together'},
+              {n:'The sea and the wild animals', d:'a world larger than one person\u2019s pain'}
+            ],
+            themes:['Suffering without explanation','The limits of human knowledge','Humility','Wonder at creation','Why simple comfort fails'],
+            lensIntro:'A formalist lens looks at the form of a text \u2014 structure, language, imagery, and style \u2014 rather than its history or the author\u2019s life. In Job 38 the form itself carries the meaning.',
+            analysis:[
+              'A formalist lens focuses on the form of a text, such as its structure, language, images, and style, instead of its history or the author\u2019s life. In Job 38, we can see how the form of the writing creates the meaning.',
+              'First, look at the structure. The Book of Job begins and ends with simple prose, but the middle is long poetry. For many chapters, Job and his three friends speak in long arguments about why he suffers. Then God speaks \u201cout of the whirlwind\u201d in chapter 38. The change of speaker is a turning point. After so much human talking, the voice of God feels strong and surprising.',
+              'Second, the main device in this chapter is the rhetorical question. God does not explain Job\u2019s pain. Instead, God asks question after question. Where was Job when the earth was made? Who set the limits of the sea? Who sends the rain, or knows the way to the stars? These questions have no answers that Job can give. The form itself is the message: Job has asked for answers, and he receives questions that show the limits of human knowledge.',
+              'Third, the language is full of strong images and nature. The sea is like a baby wrapped in clouds. The morning stars sing together. Snow, hail, lightning, lions, ravens, and mountain goats all appear. The images move from the huge sky to the small wild animals, showing that creation is wide and beyond Job\u2019s control. The poetry uses parallel lines, where the second line repeats or answers the first, which gives a steady, powerful rhythm.',
+              'Fourth, the tone is grand and a little ironic. God speaks like a teacher who is asking the student questions to open his mind, not to shame him. This also changes the earlier mood of the book, from complaining to wonder.',
+              'In conclusion, the form of Job 38 teaches as much as its words. By using questions, images, and rhythm, the text leads the reader to the same humble silence that Job feels.'
+            ],
+            refs:[{l:'Bible Hub \u2014 Job 38',u:'https://biblehub.com/nasb_/job/38.htm'},{l:'Britannica \u2014 The Book of Job',u:'https://www.britannica.com/topic/The-Book-of-Job'}]
+          },
+          {
+            id:'iliad', num:'06', title:'The Iliad', author:'Homer', authorShort:'Homer',
+            lens:'Archetypal / Mythological Lens', cv:'#D2B295', ci:'#7A3A22', motif:MOTIF.iliad,
+            desc:'An epic of anger, honor, grief, and the human cost of war.',
+            overview:'The Iliad is an ancient Greek epic of the Trojan War that begins with rage: Achilles\u2019 anger after Agamemnon takes his prize, Briseis. Around that anger the poem gathers Hector and Andromache, Patroclus, King Priam, Helen, and a company of gods who watch, take sides, and still cannot undo what is fated.',
+            figures:[
+              {n:'Achilles', d:'the greatest warrior, half god, undone by his own rage'},
+              {n:'Hector', d:'the family man who fights for his city'},
+              {n:'Patroclus', d:'Achilles\u2019 closest friend, whose death changes everything'},
+              {n:'Priam', d:'the wise old king who asks for his son\u2019s body'},
+              {n:'Agamemnon', d:'the leader who takes Achilles\u2019 prize'},
+              {n:'Andromache', d:'Hector\u2019s wife, who sees what war will cost'},
+              {n:'Helen', d:'beauty that becomes a symbol of desire and destruction'},
+              {n:'The gods', d:'Zeus, Athena, Aphrodite, Ares, and Thetis'}
+            ],
+            themes:['Rage and its cost','Glory against a short life','Duty versus glory','Grief and the return to humanity','Fate that even gods cannot escape'],
+            lensIntro:'An archetypal / mythological lens looks for patterns, symbols, and character types that recur across stories and cultures \u2014 the hero, the wise guide, the journey, the descent.',
+            analysis:[
+              'An archetypal lens looks for patterns, symbols, and character types that appear in stories across the world and across time. The Iliad, an ancient Greek epic about the Trojan War, is full of them.',
+              'The most important archetype is the Hero. Achilles is the greatest warrior, but he is not perfect. He has a flaw, which is his rage. The poem begins with his anger after Agamemnon takes his prize, Briseis. In the hero pattern, he is also half god, because his mother is the sea goddess Thetis. He knows he will die young if he fights, and still he must choose between a short life with glory or a long life without it. This is the classic tragic hero, who is both great and weak.',
+              'Hector is the opposite kind of hero. He is a family man who fights to protect his city, his wife Andromache, and his baby son. Together, Achilles and Hector show two sides of heroism: glory and duty.',
+              'Another archetype is the Journey through Death and Rebirth. When Achilles\u2019 best friend Patroclus dies, Achilles is broken by grief. His anger turns into a wild revenge, and he kills Hector and mistreats his body. Later, King Priam, the Wise Old Man in the story, comes to Achilles\u2019 tent alone to ask for his son\u2019s body. Achilles sees his own father in Priam, and they cry together. This scene is like a rebirth. Achilles returns to his humanity.',
+              'The gods are archetypes too. Zeus is the Father or King, Athena is the Wise Guide, Aphrodite is Love and Desire, and Ares is War. Thetis is the Mother who cannot save her child from fate. Helen is the Beautiful Woman who causes a war, and her beauty becomes a symbol of desire and destruction.',
+              'Finally, the Fate theme appears everywhere. Even gods and heroes cannot fully escape what is destined. Through these patterns, the Iliad becomes more than a war story. It becomes a story about anger, grief, and what it means to be human.'
+            ],
+            refs:[{l:'Project Gutenberg \u2014 Butler translation',u:'https://gutenberg.org/ebooks/2199'},{l:'Britannica \u2014 The Iliad',u:'https://www.britannica.com/topic/Iliad-epic-poem-by-Homer'}]
+          },
+          {
+            id:'odyssey', num:'07', title:'The Odyssey', author:'Homer', authorShort:'Homer',
+            lens:'Archetypal / Mythological Lens', cv:'#B8C6C7', ci:'#1F4747', motif:MOTIF.odyssey,
+            desc:'A journey of trials, loyalty, intelligence, and the longing to return home.',
+            overview:'The Odyssey follows Odysseus\u2019 ten-year journey home to Ithaca after the Trojan War, and the parallel growing-up of his son Telemachus while Penelope holds off the suitors. It is one of the clearest and oldest examples of the Hero\u2019s Journey: departure, trial, descent, and return.',
+            figures:[
+              {n:'Odysseus', d:'the hero who wins by cleverness as much as strength'},
+              {n:'Penelope', d:'the faithful, clever wife who tests the suitors'},
+              {n:'Telemachus', d:'the son who grows into a man while his father is away'},
+              {n:'Athena', d:'the mentor who protects and advises'},
+              {n:'Polyphemus', d:'the Cyclops, raw force defeated by wit'},
+              {n:'Circe and Calypso', d:'the enchantress and the offer of comfort'},
+              {n:'The Sirens', d:'temptation with a beautiful voice'}
+            ],
+            themes:['The longing to return home','Cunning over force','Temptation, comfort, and forgetfulness','Descent and wisdom','Loyalty and patience'],
+            lensIntro:'The archetypal / mythological lens reads the poem as a map of recurring patterns \u2014 the Hero\u2019s Journey, the monsters and temptations, the descent to the underworld, the faithful wife, the hidden king.',
+            analysis:[
+              'The Odyssey tells how Odysseus travels home after the Trojan War. It is one of the best examples of the \u201cHero\u2019s Journey,\u201d the pattern of leaving home, facing trials, and coming back changed. Looking at it through an archetypal lens, we find many patterns that still appear in stories today.',
+              'The journey is the first big archetype. Odysseus leaves the war and wants only to return to Ithaca, but he is delayed for ten years. Along the way, he faces tests that show his skill and his flaws. This path of departure, trial, and return is the same one found in many myths and modern stories.',
+              'The Monsters and Temptations are also archetypes. The Cyclops Polyphemus is a giant who represents raw force and danger, and Odysseus defeats him with cleverness, not strength. Circe is the Enchantress who changes men into pigs. The Sirens are the temptation that pulls sailors to their deaths with beautiful songs. Calypso offers him a comfortable life and even immortality, but Odysseus still chooses his home. These tests show that the true enemy of a hero is not only a monster. It is also forgetfulness and comfort.',
+              'The Descent to the Underworld is another strong archetype. Odysseus visits the land of the dead and speaks with spirits, including his mother and Achilles. This is like a symbolic death, where the hero learns from the past and gains wisdom before returning to life.',
+              'There are also helpers and guides. Athena acts as the Mentor who protects and advises him. Telemachus, his son, goes through his own growing up and becomes a man. Penelope is the Faithful Wife and the Wise Woman who tests the suitors with her own clever tricks.',
+              'Odysseus returns home in disguise as a beggar. This is the archetype of the hidden king, who must prove himself before he takes back his place. When he finally reveals himself and removes the suitors, order returns to his house.',
+              'Through these patterns, The Odyssey teaches that being a hero is not only about strength. It is also about patience, intelligence, loyalty, and the strong wish to go home.'
+            ],
+            refs:[{l:'Project Gutenberg \u2014 Butler translation',u:'https://gutenberg.org/ebooks/1727'},{l:'Britannica \u2014 The Odyssey',u:'https://britannica.com/topic/Odyssey-epic-by-Homer'}]
+          }
+        );
+
+
+
+  var deco = {
+        book: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M32 18c-5-3.5-12-4.6-18-4.2v34c6-.4 13 .7 18 4.2 5-3.5 12-4.6 18-4.2v-34c-6-.4-13 .7-18 4.2Z"/><path d="M32 18v34"/></svg>',
+        glass: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><circle cx="27" cy="26" r="14"/><path d="M38 37l11 11"/><path d="M20 26a7 7 0 0 1 7-7" opacity=".6"/></svg>',
+        map: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M12 16l13-4 14 5 13-5v36l-13 5-14-5-13 4Z"/><path d="M25 12v36M39 17v36" opacity=".55"/></svg>',
+        stars: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M20 12l2.6 7.4L30 22l-7.4 2.6L20 32l-2.6-7.4L10 22l7.4-2.6Z"/><circle cx="45" cy="18" r="2"/><circle cx="52" cy="34" r="1.4"/><circle cx="34" cy="28" r="1.2"/><path d="M32 46c8 0 14 4 14 10" opacity=".6"/></svg>',
+        branch: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M18 56c0-20 6-34 28-42"/><path d="M28 44c-7-1-11-5-12-12 7 1 11 5 12 12Z"/><path d="M34 34c-3-6-2-11 2-16 4 5 4 10-2 16Z" opacity=".8"/><path d="M42 22c1-6 5-9 11-10-1 6-5 9-11 10Z" opacity=".6"/></svg>'
+      };
+  var JOB38_SVG = "<svg viewBox=\"0 0 520 640\" role=\"img\" aria-labelledby=\"mpArtTitle mpArtDesc\">\n                    <title id=\"mpArtTitle\">Original illustration for Voice Out of the Whirlwind</title>\n                    <desc id=\"mpArtDesc\">A night sky with scattered gold stars, an immense whirlwind drawn as narrowing rings of cream line-work, a column of pale light opening above it, and dark ocean waves below.</desc>\n                    <defs>\n                      <linearGradient id=\"mpSkyG\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                        <stop offset=\"0%\" stop-color=\"#3C3931\"/><stop offset=\"46%\" stop-color=\"#2C2A23\"/><stop offset=\"100%\" stop-color=\"#1D1C16\"/>\n                      </linearGradient>\n                      <radialGradient id=\"mpLightG\" cx=\"50%\" cy=\"30%\" r=\"55%\">\n                        <stop offset=\"0%\" stop-color=\"#F5E7C2\" stop-opacity=\".5\"/>\n                        <stop offset=\"52%\" stop-color=\"#E7D3A0\" stop-opacity=\".12\"/>\n                        <stop offset=\"100%\" stop-color=\"#E7D3A0\" stop-opacity=\"0\"/>\n                      </radialGradient>\n                    </defs>\n                    <rect width=\"520\" height=\"640\" fill=\"#24221B\"/>\n                    <rect width=\"520\" height=\"640\" fill=\"url(#mpSkyG)\"/>\n                    <rect width=\"520\" height=\"640\" fill=\"url(#mpLightG)\"/>\n                    <g fill=\"#EBD9A9\">\n                      <circle cx=\"58\" cy=\"72\" r=\"1.5\" opacity=\".8\"/><circle cx=\"112\" cy=\"120\" r=\"1.1\" opacity=\".65\"/>\n                      <circle cx=\"168\" cy=\"64\" r=\"1.3\" opacity=\".9\"/><circle cx=\"214\" cy=\"128\" r=\"1\" opacity=\".55\"/>\n                      <circle cx=\"268\" cy=\"76\" r=\"1.6\" opacity=\".85\"/><circle cx=\"318\" cy=\"132\" r=\"1.1\" opacity=\".6\"/>\n                      <circle cx=\"372\" cy=\"88\" r=\"1.4\" opacity=\".9\"/><circle cx=\"428\" cy=\"140\" r=\"1\" opacity=\".5\"/>\n                      <circle cx=\"464\" cy=\"76\" r=\"1.3\" opacity=\".8\"/><circle cx=\"34\" cy=\"180\" r=\"1.1\" opacity=\".55\"/>\n                      <circle cx=\"92\" cy=\"228\" r=\"1.4\" opacity=\".8\"/><circle cx=\"146\" cy=\"176\" r=\"1\" opacity=\".5\"/>\n                      <circle cx=\"398\" cy=\"228\" r=\"1.3\" opacity=\".75\"/><circle cx=\"452\" cy=\"196\" r=\"1\" opacity=\".55\"/>\n                      <circle cx=\"486\" cy=\"252\" r=\"1.2\" opacity=\".7\"/><circle cx=\"52\" cy=\"300\" r=\"1\" opacity=\".45\"/>\n                      <circle cx=\"132\" cy=\"330\" r=\"1.2\" opacity=\".6\"/><circle cx=\"404\" cy=\"316\" r=\"1.1\" opacity=\".55\"/>\n                    </g>\n                    <g stroke=\"#E7D3A0\" stroke-width=\"1\" fill=\"none\" opacity=\".8\">\n                      <path d=\"M112 130l3 8.6 8.6 3-8.6 3-3 8.6-3-8.6-8.6-3 8.6-3Z\"/>\n                      <path d=\"M430 168l2.2 6.4 6.4 2.2-6.4 2.2-2.2 6.4-2.2-6.4-6.4-2.2 6.4-2.2Z\"/>\n                      <path d=\"M86 262l1.8 5.2 5.2 1.8-5.2 1.8-1.8 5.2-1.8-5.2-5.2-1.8 5.2-1.8Z\"/>\n                    </g>\n                    <g fill=\"#F3E7C4\" opacity=\".07\">\n                      <path d=\"M258 34 200 470h116Z\"/>\n                      <path d=\"M258 34 132 470h44Z\" opacity=\".7\"/>\n                      <path d=\"M258 34 362 470h-28Z\" opacity=\".7\"/>\n                    </g>\n                    <g fill=\"none\" stroke=\"#EEE1BD\" stroke-opacity=\".72\" stroke-width=\"1.4\" stroke-linecap=\"round\">\n                      <ellipse cx=\"258\" cy=\"196\" rx=\"104\" ry=\"15\"/>\n                      <ellipse cx=\"258\" cy=\"232\" rx=\"92\" ry=\"13.5\" stroke-opacity=\".66\"/>\n                      <ellipse cx=\"258\" cy=\"268\" rx=\"79\" ry=\"12\" stroke-opacity=\".62\"/>\n                      <ellipse cx=\"258\" cy=\"304\" rx=\"64\" ry=\"10.5\" stroke-opacity=\".56\"/>\n                      <ellipse cx=\"258\" cy=\"338\" rx=\"50\" ry=\"9\" stroke-opacity=\".5\"/>\n                      <ellipse cx=\"258\" cy=\"370\" rx=\"37\" ry=\"7.5\" stroke-opacity=\".44\"/>\n                      <ellipse cx=\"258\" cy=\"398\" rx=\"25\" ry=\"6\" stroke-opacity=\".38\"/>\n                      <ellipse cx=\"258\" cy=\"422\" rx=\"14\" ry=\"4.5\" stroke-opacity=\".32\"/>\n                    </g>\n                    <g fill=\"none\" stroke=\"#EEE1BD\" stroke-opacity=\".55\" stroke-width=\"1.2\" stroke-linecap=\"round\">\n                      <path d=\"M154 196c-6 96 34 172 96 226\"/>\n                      <path d=\"M362 196c6 96-34 172-96 226\" stroke-opacity=\".45\"/>\n                      <path d=\"M190 250c46-14 100-6 124 30\"/>\n                      <path d=\"M206 344c38-12 78-4 94 22\" stroke-opacity=\".4\"/>\n                    </g>\n                    <g stroke=\"#CFC4A5\" stroke-opacity=\".18\" fill=\"none\" stroke-width=\"1\">\n                      <path d=\"M0 160c56-26 96-6 140-20s84-24 128 2\"/>\n                      <path d=\"M300 150c44-18 80-4 112-16s68-6 108 12\"/>\n                    </g>\n                    <rect y=\"470\" width=\"520\" height=\"170\" fill=\"#191813\"/>\n                    <g stroke=\"#EEE1BD\" fill=\"none\" stroke-linecap=\"round\">\n                      <path d=\"M-10 498q26-13 52 0t52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0\" stroke-opacity=\".62\" stroke-width=\"1.3\"/>\n                      <path d=\"M-10 522q26-13 52 0t52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0\" stroke-opacity=\".46\" stroke-width=\"1.2\"/>\n                      <path d=\"M-10 548q26-13 52 0t52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0\" stroke-opacity=\".32\" stroke-width=\"1.1\"/>\n                      <path d=\"M-10 576q26-13 52 0t52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0 52 0\" stroke-opacity=\".2\" stroke-width=\"1\"/>\n                    </g>\n                    <text x=\"260\" y=\"618\" text-anchor=\"middle\" font-family=\"Inter, sans-serif\" font-size=\"9\" letter-spacing=\"6.5\" fill=\"#C9AE76\" opacity=\".9\">JOB &#183; XXXVIII</text>\n                    <rect x=\"18\" y=\"18\" width=\"484\" height=\"604\" fill=\"none\" stroke=\"#AF8B48\" stroke-opacity=\".34\" stroke-width=\"1\"/>\n                  </svg>";
+
+  var REFLECTIONS = [
+    {
+      tab: 'Growth',
+      label: 'Seeing Stories Differently',
+      answer: 'Before this course, I thought literature was only about reading a story and knowing what happens. Now I know it is also about asking what the story is trying to say. I used to avoid old works because I thought they would be hard and boring. Now I enjoy them, especially the ones with deep lessons. I have learned to slow down and look for the meaning behind the words.',
+      vignette: 'From passive reading to looking beneath the surface &mdash; discovering that old stories are living riddles.',
+      deco: deco.book
+    },
+    {
+      tab: 'Challenges',
+      label: 'Finding My Way Through Difficult Reads',
+      answer: 'One challenge was the old and unfamiliar language and the long, heavy stories. Some names, places, and customs were new to me. Another challenge was understanding the culture and time behind each work. I overcame these by reading slowly, taking notes, looking up background information, and discussing ideas with my classmates and teacher. I also pictured scenes like drawings in my mind, which helped me remember them.',
+      vignette: 'Tackling archaic vocabulary, long epic poems, and unfamiliar customs by treating each scene like an artist’s canvas.',
+      deco: deco.glass
+    },
+    {
+      tab: 'My Lens',
+      label: 'The Lens That Changed My Perspective',
+      answer: 'The lens that influenced me the most was the Historical / Contextual Lens. It showed me that a story cannot be fully understood without knowing the world around it. It made me think about the people who lived through those times and how their lives shaped what they wrote.',
+      vignette: 'Understanding the Heian imperial court, the 1930s Depression, and Jim Crow laws to see what authors could not say openly.',
+      deco: deco.map
+    },
+    {
+      tab: 'Realizations',
+      label: 'Lessons Beyond the Page',
+      answer: 'My favorite work is Voice Out of the Whirlwind (Job 38). It taught me that people have limits and that we cannot always understand everything in life. When Job suffers, he starts to question why bad things happen to him, just like many of us do. God’s answer does not give an easy explanation. It reminds me to be humble. I also learned that human nature does not change much. People in every age have dealt with pride, power, fear, love, and loss. Stories help us see that we are not alone.',
+      vignette: 'Job 38 taught me that questions are not failures of faith, and that accepting our limits brings humility and peace.',
+      deco: deco.stars
+    },
+    {
+      tab: 'Moving Forward',
+      label: 'Carrying These Lessons Forward',
+      answer: 'Personally: I will be more humble and patient when things are hard, and I will try to understand people before judging them.\n\nAcademically: I will read more carefully, think more deeply, and explain my ideas clearly.\n\nProfessionally: As an IT professional, I will work with many kinds of people. The empathy, critical thinking, and communication I learned will help me understand users, work with a team, and make fair and thoughtful decisions.',
+      vignette: 'Bridging technology and humanity &mdash; how critical thinking, empathy, and patient communication shape software development.',
+      deco: deco.branch
+    }
+  ];
+
+  /* Populate All Reflections Modal */
+  var allRfGrid = document.getElementById('allRfGrid');
+  allRfGrid.innerHTML = REFLECTIONS.map(function(r, i){
+    var formatted = r.answer.replace(/\n\n/g, '</p><p>');
+    return '<article class="all-card"><span class="all-k">Note 0' + (i + 1) + ' &middot; ' + r.tab + '</span><h4>' + r.label + '</h4><p>' + formatted + '</p></article>';
+  }).join('');
+
+  document.getElementById('rfAllBtn').addEventListener('click', function(){
+    document.getElementById('allRfModal').hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('allRfClose').addEventListener('click', function(){
+    document.getElementById('allRfModal').hidden = true;
+    document.body.style.overflow = '';
+  });
+
+  /* ---------- Draggable Student ID Card ---------- */
+  (function initDraggableId(){
+    var stage = document.getElementById('idStage');
+    var card  = document.getElementById('idCard');
+    if (!stage || !card) return;
+
+    var strapL = document.getElementById('strapL');
+    var strapR = document.getElementById('strapR');
+    var strapL2 = document.getElementById('strapL2');
+    var strapR2 = document.getElementById('strapR2');
+    var strapL3 = document.getElementById('strapL3');
+    var strapR3 = document.getElementById('strapR3');
+    var statusEl = document.getElementById('idDragStatus');
+
+    var S = { x:0, y:0, vx:0, vy:0, rot:0, vrot:0 };
+    var dragging = false, pid = null, raf = 0, lastT = 0;
+    var origin = { x:0, y:0 }, startPx = { x:0, y:0 }, lastMove = 0;
+
+    function bounds(){
+      var cw = card.offsetWidth || 290;
+      var maxX = Math.max(42, Math.min(120, (stage.clientWidth - cw) / 2 + 50));
+      return { maxX: maxX, maxY: 130 };
+    }
+    function soft(v, max){
+      var a = Math.abs(v);
+      if (a <= max) return v;
+      return Math.sign(v) * (max + (a - max) * 0.22);
+    }
+    function set(d, value){ if (d) d.setAttribute('d', value); }
+
+    function draw(){
+      card.style.transform = 'translate3d(' + S.x.toFixed(2) + 'px,' + S.y.toFixed(2) + 'px,0) rotate(' + S.rot.toFixed(2) + 'deg)';
+      card.style.setProperty('--id-shadow',
+        (12 + Math.abs(S.x) * 0.05).toFixed(1) + 'px ' + (20 + S.y * 0.10).toFixed(1) + 'px 36px -20px rgba(3,8,16,.9), ' +
+        (S.x * 0.07).toFixed(1) + 'px 6px 14px rgba(3,8,16,.4)');
+
+      var sr = stage.getBoundingClientRect();
+      var cr = card.getBoundingClientRect();
+      var ax = sr.width / 2, ay = 8;
+      var cx = cr.left - sr.left + cr.width / 2;
+      var cy = cr.top - sr.top + 8;
+      var spread = Math.max(14, Math.min(26, cr.width * 0.075));
+      var p1 = cx - spread, p2 = cx + spread;
+      var c1x = (ax + p1) / 2 - 9, c2x = (ax + p2) / 2 + 9;
+      var c1y = (ay + cy) / 2 + 9;
+      var d1 = 'M' + ax.toFixed(1) + ' ' + ay + ' Q' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ' ' + p1.toFixed(1) + ' ' + cy.toFixed(1);
+      var d2 = 'M' + ax.toFixed(1) + ' ' + ay + ' Q' + c2x.toFixed(1) + ' ' + c1y.toFixed(1) + ' ' + p2.toFixed(1) + ' ' + cy.toFixed(1);
+      set(strapL, d1); set(strapR, d2);
+      set(strapL2, d1); set(strapR2, d2);
+      set(strapL3, d1); set(strapR3, d2);
+    }
+
+    function tick(now){
+      raf = 0;
+      if (!lastT) lastT = now;
+      var dt = Math.min((now - lastT) / 1000, 0.032);
+      lastT = now;
+
+      var k = 24, c = 3.2;
+      S.vx += (-k * S.x - c * S.vx) * dt;
+      S.x  += S.vx * dt;
+      S.vy += (-k * 1.2 * S.y - c * 0.95 * S.vy) * dt;
+      S.y  += S.vy * dt;
+      var targetRot = S.x * 0.055;
+      S.vrot += ((targetRot - S.rot) * 64 - S.vrot * 8.6) * dt;
+      S.rot  += S.vrot * dt;
+
+      var still = Math.abs(S.x) < .12 && Math.abs(S.vx) < 1.5 &&
+                  Math.abs(S.y) < .12 && Math.abs(S.vy) < 1.5 &&
+                  Math.abs(S.rot) < .06 && Math.abs(S.vrot) < 1.5;
+      if (still){
+        S.x = 0; S.y = 0; S.vx = 0; S.vy = 0; S.rot = 0; S.vrot = 0;
+        draw();
+        return;
+      }
+      draw();
+      raf = requestAnimationFrame(tick);
+    }
+    function kick(){ if (!raf){ lastT = 0; raf = requestAnimationFrame(tick); } }
+
+    card.addEventListener('pointerdown', function(e){
+      if (e.button !== undefined && e.button !== 0) return;
+      dragging = true; pid = e.pointerId;
+      try { card.setPointerCapture(pid); } catch (err) {}
+      card.classList.add('is-dragging');
+      origin = { x:S.x, y:S.y };
+      startPx = { x:e.clientX, y:e.clientY };
+      lastMove = performance.now();
+      S.vx = 0; S.vy = 0; S.vrot = 0;
+      if (statusEl) statusEl.textContent = 'Card held';
+      e.preventDefault();
+    }, { passive:false });
+
+    card.addEventListener('pointermove', function(e){
+      if (!dragging || e.pointerId !== pid) return;
+      var b = bounds();
+      var prevX = S.x;
+      S.x = Math.max(-(b.maxX * 1.4), Math.min(b.maxX * 1.4, soft(origin.x + (e.clientX - startPx.x), b.maxX)));
+      S.y = Math.max(-80, Math.min(b.maxY * 1.15, soft(origin.y + (e.clientY - startPx.y) * 0.7, b.maxY)));
+      S.rot = Math.max(-16, Math.min(16, S.x * 0.05 + (S.x - prevX) * 0.55));
+      var t = performance.now();
+      var dt = Math.max(8, t - lastMove) / 1000;
+      S.vx = (S.x - prevX) / dt;
+      S.vy = (S.y - 0) / dt;
+      lastMove = t;
+      draw();
+    });
+
+    function release(){
+      if (!dragging) return;
+      dragging = false;
+      card.classList.remove('is-dragging');
+      if (pid !== null){ try { card.releasePointerCapture(pid); } catch (err) {} pid = null; }
+      if (statusEl) statusEl.textContent = '';
+      if (MLJ.reduceMotion()){ S.x = 0; S.y = 0; S.rot = 0; draw(); return; }
+      S.vx = Math.max(-1200, Math.min(1200, S.vx * 0.9));
+      S.vy = Math.max(-750, Math.min(750, S.vy * 0.45));
+      kick();
+    }
+    card.addEventListener('pointerup', release);
+    card.addEventListener('pointercancel', release);
+
+    var wigDir = 1;
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        if (MLJ.reduceMotion()) return;
+        S.vx = 520 * wigDir; S.vrot = 9 * wigDir; wigDir *= -1;
+        kick();
+      }
+    });
+
+    var greeted = false;
+    function entrance(){
+      if (greeted || MLJ.reduceMotion()) return;
+      greeted = true;
+      S.y = -80; S.vy = 180; S.vx = -280; S.vrot = -6;
+      kick();
+    }
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(en){
+        if (en[0].isIntersecting){ entrance(); io.disconnect(); }
+      }, { threshold:.3 });
+      io.observe(stage);
+    } else { entrance(); }
+
+    window.addEventListener('resize', draw);
+    draw();
+  })();
+
+  /* ---------- DESK STATE & SWITCHER ENGINE ---------- */
+  var deskState = {
+    activeObj: null, // 'collection' | 'masterpiece' | 'reflection' | 'learned'
+    collection: { mode: 'index', workIndex: 0, spread: 0 },
+    masterpiece: { spread: 0 },
+    reflection: { tabIndex: 0 },
+    learned: { cardIndex: 0 }
+  };
+
+  var deskResting = document.getElementById('deskResting');
+  var deskStage = document.getElementById('deskStage');
+  var stageProgress = document.getElementById('stageProgress');
+  var readFullBtn = document.getElementById('readFullTrigger');
+
+  function openDeskObject(objKey){
+    if (deskState.activeObj === objKey) return;
+    deskState.activeObj = objKey;
+
+    deskResting.hidden = true;
+    deskStage.hidden = false;
+
+    // Update object switcher tabs
+    document.querySelectorAll('.obj-tab').forEach(function(b){
+      var k = b.getAttribute('data-desk');
+      b.setAttribute('aria-pressed', k === objKey ? 'true' : 'false');
+    });
+
+    // Toggle object viewports
+    document.querySelectorAll('.reading-obj').forEach(function(el){ el.hidden = true; });
+    var targetEl = document.getElementById('obj' + objKey.charAt(0).toUpperCase() + objKey.slice(1));
+    if (targetEl) targetEl.hidden = false;
+
+    // Render active object
+    if (objKey === 'collection') renderCollection();
+    else if (objKey === 'masterpiece') renderMasterpiece();
+    else if (objKey === 'reflection') renderReflection();
+    else if (objKey === 'learned') renderLearned();
+
+    MLJ.announce(objKey + ' opened on the literary desk.');
+  }
+  MLJ.openDeskObject = openDeskObject;
+
+  function closeDeskStage(){
+    deskState.activeObj = null;
+    deskStage.hidden = true;
+    deskResting.hidden = false;
+    MLJ.announce('Returned to literary desk.');
+  }
+
+  // Cover & Button Triggers on the Desk
+  document.getElementById('hcCoverTrigger').addEventListener('click', function(){ openDeskObject('collection'); });
+  document.getElementById('openHcBtn').addEventListener('click', function(){ openDeskObject('collection'); });
+  document.getElementById('mpCoverTrigger').addEventListener('click', function(){ openDeskObject('masterpiece'); });
+  document.getElementById('openMpBtn').addEventListener('click', function(){ openDeskObject('masterpiece'); });
+  document.getElementById('rfCoverTrigger').addEventListener('click', function(){ openDeskObject('reflection'); });
+  document.getElementById('openRfBtn').addEventListener('click', function(){ openDeskObject('reflection'); });
+  document.getElementById('icCoverTrigger').addEventListener('click', function(){ openDeskObject('learned'); });
+  document.getElementById('openIcBtn').addEventListener('click', function(){ openDeskObject('learned'); });
+
+  // Stage Switcher Tabs & Close Button
+  document.querySelectorAll('.obj-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var k = btn.getAttribute('data-desk');
+      openDeskObject(k);
+    });
+  });
+  document.getElementById('closeStageBtn').addEventListener('click', closeDeskStage);
+
+  /* ---------- 1. GREAT BOOKS HARDCOVER ENGINE ---------- */
+  var hcPageLeft = document.getElementById('hcPageLeft');
+  var hcPageRight = document.getElementById('hcPageRight');
+  var hcPrevWork = document.getElementById('hcPrevWork');
+  var hcNextWork = document.getElementById('hcNextWork');
+  var hcBackToIndex = document.getElementById('hcBackToIndex');
+  var hcPrevSpread = document.getElementById('hcPrevSpread');
+  var hcNextSpread = document.getElementById('hcNextSpread');
+
+  function coverHTML(w){
+    return '<span class="cover" style="--cv:' + w.cv + ';--ci:' + w.ci + '" aria-hidden="true">' +
+      '<span class="cv-num">No. ' + w.num + '</span>' +
+      '<span class="cv-art">' + w.motif + '</span>' +
+      '<span class="cv-ttl">' + w.title + '</span>' +
+      '<span class="cv-au">' + w.authorShort + '</span>' +
+    '</span>';
+  }
+
+  function renderCollection(){
+    var cState = deskState.collection;
+    var isIndex = cState.mode === 'index';
+
+    hcBackToIndex.hidden = isIndex;
+    hcPrevWork.hidden = isIndex;
+    hcNextWork.hidden = isIndex;
+    readFullBtn.hidden = isIndex;
+
+    if (isIndex){
+      stageProgress.innerHTML = 'Contents &middot; <b>Seven Works</b>';
+      hcPrevSpread.disabled = true;
+      hcNextSpread.disabled = false;
+      hcPrevSpread.hidden = false;
+      hcNextSpread.hidden = false;
+
+      // Index Spread: Left Page (Works 1-4)
+      var leftIdx = WORKS.slice(0, 4).map(function(w){
+        return '<li><button class="idx-item" type="button" data-hc-work="' + w.id + '">' +
+          coverHTML(w) +
+          '<div style="min-width:0">' +
+            '<span class="idx-title">' + w.num + '. ' + w.title + '</span>' +
+            '<span class="idx-author">' + w.authorShort + '</span>' +
+            '<span class="idx-lens">' + w.lens + '</span>' +
+            '<p class="idx-desc">' + w.desc + '</p>' +
+            '<span class="idx-go">Open Work &rarr;</span>' +
+          '</div></button></li>';
+      }).join('');
+
+      hcPageLeft.innerHTML = '<p class="page-eyebrow">The Collection</p>' +
+        '<h3 class="page-title">Contents</h3>' +
+        '<p class="page-sub">Works 01 &ndash; 04 &middot; Anthology</p><hr class="page-rule">' +
+        '<ul class="idx">' + leftIdx + '</ul>' +
+        '<div class="page-foot"><span>Great Books</span><span>Page i</span></div>';
+
+      // Index Spread: Right Page (Works 5-7 + Note)
+      var rightIdx = WORKS.slice(4).map(function(w){
+        return '<li><button class="idx-item" type="button" data-hc-work="' + w.id + '">' +
+          coverHTML(w) +
+          '<div style="min-width:0">' +
+            '<span class="idx-title">' + w.num + '. ' + w.title + '</span>' +
+            '<span class="idx-author">' + w.authorShort + '</span>' +
+            '<span class="idx-lens">' + w.lens + '</span>' +
+            '<p class="idx-desc">' + w.desc + '</p>' +
+            '<span class="idx-go">Open Work &rarr;</span>' +
+          '</div></button></li>';
+      }).join('');
+
+      hcPageRight.innerHTML = '<p class="page-eyebrow">Selected Readings</p>' +
+        '<h3 class="page-title">Seven Masterpieces</h3>' +
+        '<p class="page-sub">Works 05 &ndash; 07 &middot; One reader&rsquo;s collection</p><hr class="page-rule">' +
+        '<ul class="idx">' + rightIdx + '</ul>' +
+        '<div style="margin-top:.8rem;padding:.7rem .85rem;background:rgba(117,47,64,.08);border-left:2px solid var(--burgundy);border-radius:1px">' +
+          '<p style="font-family:var(--hand);font-size:1.15rem;color:var(--burgundy-deep);margin:0">Every work opens its own dedicated reading spreads. Select any title to turn the page.</p>' +
+        '</div>' +
+        '<div class="page-foot"><span>Angelaica Mae P. Harochoc</span><span>Page ii</span></div>' +
+        '<span class="page-turn-hint">Next Page &rarr;</span>';
+
+      hcPageLeft.className = 'page page--left is-first';
+      hcPageRight.className = 'page page--right';
+    } else {
+      // Work Spreads (Spread 0: Info + Analysis Pt 1 | Spread 1: Analysis Pt 2 + Conclusion)
+      var w = WORKS[cState.workIndex];
+      var totalSpreads = 2;
+      var curSpread = cState.spread;
+
+      stageProgress.innerHTML = 'Work <b>' + (cState.workIndex + 1) + ' of 7</b> &middot; ' + w.title + ' (Spread ' + (curSpread + 1) + ' of ' + totalSpreads + ')';
+      hcPrevWork.disabled = cState.workIndex === 0;
+      hcNextWork.disabled = cState.workIndex === WORKS.length - 1;
+      hcPrevSpread.disabled = curSpread === 0;
+      hcNextSpread.disabled = curSpread === totalSpreads - 1;
+
+      if (curSpread === 0){
+        // SPREAD 1:
+        // Left Page: About the Work
+        hcPageLeft.innerHTML = '<p class="page-eyebrow">About the work &middot; Work ' + w.num + '</p>' +
+          '<div class="work-top">' + coverHTML(w) +
+            '<div><h3 class="page-title" style="font-size:1.35rem">' + w.title + '</h3>' +
+            '<p class="page-sub" style="margin-bottom:.4rem">' + w.author + '</p>' +
+            '<span class="work-lens">' + w.lens + '</span></div>' +
+          '</div><hr class="page-rule">' +
+          '<div class="page-body">' +
+            '<div class="wsec"><h4>Overview</h4><p>' + w.overview + '</p></div>' +
+            '<div class="wsec"><h4>Central figures</h4><ul class="fig-list">' +
+              w.figures.slice(0, 4).map(function(f){ return '<li><span><b>' + f.n + '</b> &mdash; ' + f.d + '</span></li>'; }).join('') +
+            '</ul></div>' +
+            '<div class="wsec"><h4>Main themes</h4><ul class="chip-row">' +
+              w.themes.slice(0, 4).map(function(t){ return '<li class="chip">' + t + '</li>'; }).join('') +
+            '</ul></div>' +
+          '</div>' +
+          '<div class="page-foot"><span>' + w.title + '</span><span>Pages 1&ndash;2 of 4</span></div>' +
+          '<span class="page-turn-hint">&larr; Previous Page</span>';
+
+        // Right Page: Analysis Part 1 (Paragraphs 1-2)
+        var p1 = w.analysis[0] || '';
+        var p2 = w.analysis[1] || '';
+        hcPageRight.innerHTML = '<p class="page-eyebrow">My Literary Analysis</p>' +
+          '<h3 class="page-title">' + w.lens + '</h3>' +
+          '<p class="page-sub">Analysis &middot; Part 1 of 2</p><hr class="page-rule">' +
+          '<div class="page-body">' +
+            '<p class="has-dropcap">' + p1 + '</p>' +
+            '<p>' + p2 + '</p>' +
+          '</div>' +
+          '<div class="page-foot"><span>Great Books Analysis</span><span>Page 2 of 4</span></div>' +
+          '<span class="page-turn-hint">Next Page &rarr;</span>';
+
+        hcPageLeft.className = 'page page--left';
+        hcPageRight.className = 'page page--right';
+      } else {
+        // SPREAD 2:
+        // Left Page: Analysis Part 2 (Paragraphs 3-4)
+        var p3 = w.analysis[2] || '';
+        var p4 = w.analysis[3] || '';
+        hcPageLeft.innerHTML = '<p class="page-eyebrow">My Literary Analysis &middot; Continued</p>' +
+          '<h3 class="page-title">' + w.title + '</h3>' +
+          '<p class="page-sub">Analysis &middot; Part 2 of 2</p><hr class="page-rule">' +
+          '<div class="page-body">' +
+            '<p>' + p3 + '</p>' +
+            '<p>' + p4 + '</p>' +
+          '</div>' +
+          '<div class="page-foot"><span>' + w.title + '</span><span>Page 3 of 4</span></div>' +
+          '<span class="page-turn-hint">&larr; Previous Page</span>';
+
+        // Right Page: Analysis Conclusion (Paragraph 5 & optional 6) + Note + Action
+        var p5 = w.analysis[4] || '';
+        var p6 = w.analysis[5] ? '<p>' + w.analysis[5] + '</p>' : '';
+        hcPageRight.innerHTML = '<p class="page-eyebrow">Conclusion &amp; Synthesis</p>' +
+          '<h3 class="page-title">Analytical Takeaway</h3>' +
+          '<p class="page-sub">' + w.lens + '</p><hr class="page-rule">' +
+          '<div class="page-body">' +
+            '<p>' + p5 + '</p>' +
+            p6 +
+            '<div style="margin-top:.85rem;padding:.75rem .9rem;background:rgba(36,61,53,.12);border-left:2px solid var(--forest);border-radius:1px">' +
+              '<p style="font-size:12.8px;line-height:1.5;color:var(--ink-80);margin:0"><strong>Lens Impact:</strong> ' + w.lensIntro + '</p>' +
+            '</div>' +
+          '</div>' +
+          '<div class="page-foot"><span>End of Analysis &middot; Work ' + w.num + '</span><span>Page 4 of 4</span></div>' +
+          '<span class="page-turn-hint">End of Work</span>';
+
+        hcPageLeft.className = 'page page--left';
+        hcPageRight.className = 'page page--right is-last';
+      }
+    }
+  }
+
+  // Work selection clicks
+  document.addEventListener('click', function(e){
+    var item = e.target.closest('[data-hc-work]');
+    if (!item) return;
+    var id = item.getAttribute('data-hc-work');
+    for (var i = 0; i < WORKS.length; i++){
+      if (WORKS[i].id === id){
+        deskState.collection.mode = 'work';
+        deskState.collection.workIndex = i;
+        deskState.collection.spread = 0;
+        renderCollection();
+        break;
+      }
+    }
+  });
+
+  hcBackToIndex.addEventListener('click', function(){
+    deskState.collection.mode = 'index';
+    deskState.collection.spread = 0;
+    renderCollection();
+  });
+  hcPrevWork.addEventListener('click', function(){
+    if (deskState.collection.workIndex > 0){
+      deskState.collection.workIndex--;
+      deskState.collection.spread = 0;
+      renderCollection();
+    }
+  });
+  hcNextWork.addEventListener('click', function(){
+    if (deskState.collection.workIndex < WORKS.length - 1){
+      deskState.collection.workIndex++;
+      deskState.collection.spread = 0;
+      renderCollection();
+    }
+  });
+  hcPrevSpread.addEventListener('click', function(){
+    if (deskState.collection.spread > 0){
+      deskState.collection.spread--;
+      renderCollection();
+    }
+  });
+  hcNextSpread.addEventListener('click', function(){
+    if (deskState.collection.mode === 'index'){
+      // Open work 1
+      deskState.collection.mode = 'work';
+      deskState.collection.workIndex = 0;
+      deskState.collection.spread = 0;
+      renderCollection();
+    } else if (deskState.collection.spread < 1){
+      deskState.collection.spread++;
+      renderCollection();
+    }
+  });
+
+  /* Click Left/Right Page to Turn (Rule 11) */
+  function handlePageTurnClick(isLeft, curObj){
+    var sel = window.getSelection();
+    if (sel && sel.toString().trim().length > 0) return; // don't turn on text select
+
+    if (curObj === 'collection'){
+      var cState = deskState.collection;
+      if (isLeft){
+        if (cState.mode === 'work'){
+          if (cState.spread > 0) { cState.spread--; renderCollection(); }
+          else { cState.mode = 'index'; renderCollection(); }
+        }
+      } else {
+        if (cState.mode === 'index'){
+          cState.mode = 'work'; cState.workIndex = 0; cState.spread = 0; renderCollection();
+        } else if (cState.spread === 0){
+          cState.spread = 1; renderCollection();
+        } else if (cState.workIndex < WORKS.length - 1){
+          cState.workIndex++; cState.spread = 0; renderCollection();
+        }
+      }
+    } else if (curObj === 'masterpiece'){
+      var mState = deskState.masterpiece;
+      if (isLeft && mState.spread > 0){ mState.spread--; renderMasterpiece(); }
+      else if (!isLeft && mState.spread < 3){ mState.spread++; renderMasterpiece(); }
+    } else if (curObj === 'reflection'){
+      var rState = deskState.reflection;
+      if (isLeft && rState.tabIndex > 0){ rState.tabIndex--; renderReflection(); }
+      else if (!isLeft && rState.tabIndex < 4){ rState.tabIndex++; renderReflection(); }
+    }
+  }
+
+  function isInteractiveTarget(e){
+    return !!e.target.closest('button, a, input, select, textarea, [role="button"], [role="tab"], .idx-item, .chip, .rf-edge-tab');
+  }
+
+  document.getElementById('hcPageLeft').addEventListener('click', function(e){
+    if (!isInteractiveTarget(e)) handlePageTurnClick(true, 'collection');
+  });
+  document.getElementById('hcPageRight').addEventListener('click', function(e){
+    if (!isInteractiveTarget(e)) handlePageTurnClick(false, 'collection');
+  });
+
+  /* ---------- 2. MASTERPIECE NOTEBOOK ENGINE ---------- */
+  var mpPageLeft = document.getElementById('mpPageLeft');
+  var mpPageRight = document.getElementById('mpPageRight');
+  var mpPrevSpread = document.getElementById('mpPrevSpread');
+  var mpNextSpread = document.getElementById('mpNextSpread');
+
+  function renderMasterpiece(){
+    var mState = deskState.masterpiece;
+    var at = mState.spread;
+    stageProgress.innerHTML = 'Favorite Masterpiece &middot; <b>Job 38</b> (Spread ' + (at + 1) + ' of 4)';
+    mpPrevSpread.disabled = at === 0;
+    mpNextSpread.disabled = at === 3;
+
+    if (at === 0){
+      // SPREAD 1: Art + Overview
+      mpPageLeft.innerHTML = '<div class="nb-art">' +
+        JOB38_SVG +
+        '<p class="nb-art-cap">whirlwind, stars, and sea &mdash; an original plate</p>' +
+      '</div>' +
+      '<p class="page-eyebrow">Featured Work &middot; Work 05 of 07</p>' +
+      '<p class="page-sub">Formalist lens &middot; Book of Job, Hebrew Bible</p>' +
+      '<div class="page-foot"><span>Masterpiece Notebook</span><span>Spread 1 of 4</span></div>';
+
+      mpPageRight.innerHTML = '<p class="page-eyebrow">Spread 01 &middot; Overview</p>' +
+        '<h3 class="page-title">Voice Out of the Whirlwind (Job 38)</h3>' +
+        '<p class="page-sub">From the Book of Job &middot; author unknown</p><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<p>The Book of Job is about a good man named Job who loses almost everything. He loses his wealth, his children, and his health. His friends say he must have done something wrong to deserve this. Job disagrees, and he begins to question why bad things are happening to him.</p>' +
+          '<p>In Job 38, God finally answers Job &ldquo;out of the whirlwind.&rdquo; But God does not explain why Job suffered. Instead, God asks Job many questions about the world, such as who made the earth, who controls the sea, and who feeds the animals. The questions remind Job how small human knowledge is.</p>' +
+          '<p class="m-hand" style="margin-top:.8rem">the questions are the turning point</p>' +
+        '</div>' +
+        '<div class="page-foot"><span>Overview</span><span>Page 1</span></div>' +
+        '<span class="page-turn-hint">Next Spread &rarr;</span>';
+    } else if (at === 1){
+      // SPREAD 2: Why I Chose It + Sticky Notes
+      mpPageLeft.innerHTML = '<p class="page-eyebrow">Spread 02 &middot; Why I Chose It</p>' +
+        '<h3 class="page-title">A story that does not pretend</h3>' +
+        '<p class="page-sub">An honest answer</p><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<p>I chose this work because it talks about real problems that people still face today and may face in the future. Everyone goes through hard times, and many of us ask the same question as Job: &ldquo;Why is this happening to me?&rdquo;</p>' +
+          '<p>I also like that the story does not give an easy answer. It does not say that everything has a neat reason. It makes the reader think, and that honesty makes it feel real.</p>' +
+          '<p class="m-hand" style="margin-top:.8rem">it never promises that life will make neat sense</p>' +
+        '</div>' +
+        '<div class="page-foot"><span>Why I Chose It</span><span>Spread 2 of 4</span></div>' +
+        '<span class="page-turn-hint">&larr; Previous Spread</span>';
+
+      mpPageRight.innerHTML = '<p class="page-eyebrow">Notes in the Margin</p>' +
+        '<h3 class="page-title">Core Observations</h3><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<ul class="sticky-list">' +
+            '<li class="sticky"><b>The universal question</b><span>&ldquo;Why is this happening to me?&rdquo; &mdash; everyone asks it during adversity.</span></li>' +
+            '<li class="sticky"><b>Refusal of neat answers</b><span>The narrative rejects shallow formulas that blame the sufferer.</span></li>' +
+            '<li class="sticky"><b>Evergreen relevance</b><span>Ancient poetry that speaks directly to modern human vulnerability.</span></li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="page-foot"><span>Margin Notes</span><span>Page 2</span></div>' +
+        '<span class="page-turn-hint">Next Spread &rarr;</span>';
+    } else if (at === 2){
+      // SPREAD 3: Themes, Characters, Lessons
+      mpPageLeft.innerHTML = '<p class="page-eyebrow">Spread 03 &middot; Themes &amp; Lessons</p>' +
+        '<h3 class="page-title">What the Whirlwind Teaches</h3>' +
+        '<p class="page-sub">Part 1 &middot; Human limits &amp; questions</p><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<ul class="sticky-list">' +
+            '<li class="sticky"><b>Suffering and questions</b><span>Job is not punished for asking questions. His honest feelings are part of his journey.</span></li>' +
+            '<li class="sticky"><b>Human limits</b><span>God&rsquo;s answer reminds us that people cannot always understand everything in life.</span></li>' +
+            '<li class="sticky"><b>Humility</b><span>After hearing God, Job becomes humble. He learns that not knowing everything is part of being human.</span></li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="page-foot"><span>Themes &amp; Lessons</span><span>Spread 3 of 4</span></div>' +
+        '<span class="page-turn-hint">&larr; Previous Spread</span>';
+
+      mpPageRight.innerHTML = '<p class="page-eyebrow">Themes &amp; Characters &middot; Continued</p>' +
+        '<h3 class="page-title">Creation &amp; Friendship</h3><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<ul class="sticky-list">' +
+            '<li class="sticky"><b>Wonder</b><span>The poetry of nature, such as the stars, the sea, and the animals, shows that life is bigger than our problems.</span></li>' +
+            '<li class="sticky"><b>Job&rsquo;s friends</b><span>They show how some people try to give simple answers to painful problems, which does not always help.</span></li>' +
+          '</ul>' +
+          '<p class="m-hand" style="margin-top:1rem">the vast world reminds us how small we are</p>' +
+        '</div>' +
+        '<div class="page-foot"><span>Themes Continued</span><span>Page 3</span></div>' +
+        '<span class="page-turn-hint">Next Spread &rarr;</span>';
+    } else {
+      // SPREAD 4: Personal Connections
+      mpPageLeft.innerHTML = '<p class="page-eyebrow">Spread 04 &middot; Personal Connections</p>' +
+        '<h3 class="page-title">Learning to Live Without Every Answer</h3>' +
+        '<p class="page-sub">What it changed in me</p><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<p>This story made me realize that it is okay to not have all the answers. In life, there will be times when things go wrong even when we try our best. Instead of blaming ourselves or others too quickly, we can accept that some things are beyond our control.</p>' +
+          '<p>It teaches me to be humble, to keep going, and to keep asking questions with an open heart.</p>' +
+          '<p class="m-hand" style="margin-top:.8rem">keep asking, with an open heart</p>' +
+        '</div>' +
+        '<div class="page-foot"><span>Personal Connections</span><span>Spread 4 of 4</span></div>' +
+        '<span class="page-turn-hint">&larr; Previous Spread</span>';
+
+      mpPageRight.innerHTML = '<p class="page-eyebrow">Anthology Integration</p>' +
+        '<h3 class="page-title">Read the Full Analysis</h3>' +
+        '<p class="page-sub">Formalist lens &middot; Work 05 in Great Books</p><hr class="page-rule">' +
+        '<div class="page-body">' +
+          '<p>The complete 5-paragraph academic analysis of Job 38 is integrated into the Great Books hardcover anthology, complete with formalist structural analysis, parallel poetic meter, and rhetorical device breakdowns.</p>' +
+          '<div style="margin-top:1.1rem;display:flex;flex-direction:column;gap:.6rem">' +
+            '<button class="btn btn--sm btn--burgundy" type="button" id="mpOpenFullReader">Read Analysis in Full View &rarr;</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="page-foot"><span>End of Notebook</span><span>Page 4</span></div>' +
+        '<span class="page-turn-hint">End of Notebook</span>';
+
+      document.getElementById('mpOpenFullReader').addEventListener('click', function(){
+        openFullReaderForWork(4);
+      });
+    }
+
+    mpPageLeft.className = 'page page--left' + (at === 0 ? ' is-first' : '');
+    mpPageRight.className = 'page page--right' + (at === 3 ? ' is-last' : '');
+  }
+
+  mpPrevSpread.addEventListener('click', function(){ if (deskState.masterpiece.spread > 0){ deskState.masterpiece.spread--; renderMasterpiece(); } });
+  mpNextSpread.addEventListener('click', function(){ if (deskState.masterpiece.spread < 3){ deskState.masterpiece.spread++; renderMasterpiece(); } });
+  document.getElementById('mpPageLeft').addEventListener('click', function(e){ if (!isInteractiveTarget(e)) handlePageTurnClick(true, 'masterpiece'); });
+  document.getElementById('mpPageRight').addEventListener('click', function(e){ if (!isInteractiveTarget(e)) handlePageTurnClick(false, 'masterpiece'); });
+
+  document.getElementById('mpJumpWorkBtn').addEventListener('click', function(){
+    openDeskObject('collection');
+    deskState.collection.mode = 'work';
+    deskState.collection.workIndex = 4;
+    deskState.collection.spread = 0;
+    renderCollection();
+  });
+
+  /* ---------- 3. PERSONAL REFLECTION TABBED NOTEBOOK ENGINE ---------- */
+  var rfPageLeft = document.getElementById('rfPageLeft');
+  var rfPageRight = document.getElementById('rfPageRight');
+  var rfPrevSpread = document.getElementById('rfPrevSpread');
+  var rfNextSpread = document.getElementById('rfNextSpread');
+  var rfFontBtn = document.getElementById('rfFontBtn');
+
+  function renderReflection(){
+    var rState = deskState.reflection;
+    var i = rState.tabIndex;
+    var r = REFLECTIONS[i];
+
+    stageProgress.innerHTML = 'Personal Reflection &middot; <b>' + r.tab + '</b> (Note ' + (i + 1) + ' of 5)';
+    rfPrevSpread.disabled = i === 0;
+    rfNextSpread.disabled = i === 4;
+
+    // Highlight active edge tab
+    document.querySelectorAll('.rf-edge-tab').forEach(function(tab, idx){
+      tab.setAttribute('aria-selected', idx === i ? 'true' : 'false');
+    });
+
+    // Left Page: Context Vignette & Decorative Motif
+    rfPageLeft.innerHTML = '<p class="page-eyebrow">Reflection &middot; Note 0' + (i + 1) + '</p>' +
+      '<h3 class="page-title">' + r.tab + '</h3>' +
+      '<p class="page-sub">Theme focus</p><hr class="page-rule">' +
+      '<div class="page-body">' +
+        '<div style="padding:1rem;background:rgba(182,91,53,.1);border-left:2px solid var(--orange);border-radius:2px">' +
+          '<p style="font-family:var(--hand);font-size:1.24rem;line-height:1.45;color:var(--orange-deep);margin:0">' + r.vignette + '</p>' +
+        '</div>' +
+        '<div class="rf-deco">' + r.deco + '</div>' +
+      '</div>' +
+      '<div class="page-foot"><span>Personal Reflection</span><span>Note ' + (i + 1) + ' of 5</span></div>' +
+      '<span class="page-turn-hint">&larr; Previous Note</span>';
+
+    // Right Page: Thematic Label & Full Student Answer
+    var formattedAnswer = r.answer.replace(/\n\n/g, '</p><p>');
+    rfPageRight.innerHTML = '<div class="rf-note-card">' +
+        '<span class="rf-label">' + r.label + '</span>' +
+        '<div class="rf-answer"><p>' + formattedAnswer + '</p></div>' +
+      '</div>' +
+      (i === 4 ?
+        '<div class="closing-thought-box">' +
+          '<p>&ldquo;Great Books taught me that old stories are not really old. They still speak to us today. This course helped me grow as a reader, a thinker, and a person.&rdquo;</p>' +
+          '<p class="closing-sign">&mdash; Angelaica Mae P. Harochoc</p>' +
+        '</div>' : '') +
+      '<div class="page-foot"><span>Angelaica Mae P. Harochoc</span><span>Note ' + (i + 1) + ' of 5</span></div>' +
+      '<span class="page-turn-hint">Next Note &rarr;</span>';
+
+    rfPageLeft.className = 'page page--left' + (i === 0 ? ' is-first' : '');
+    rfPageRight.className = 'page page--right' + (i === 4 ? ' is-last' : '');
+  }
+
+  // Edge Tab Clicks
+  document.querySelectorAll('.rf-edge-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var idx = parseInt(tab.getAttribute('data-rf-tab'), 10);
+      deskState.reflection.tabIndex = idx;
+      renderReflection();
+    });
+  });
+
+  rfPrevSpread.addEventListener('click', function(){ if (deskState.reflection.tabIndex > 0){ deskState.reflection.tabIndex--; renderReflection(); } });
+  rfNextSpread.addEventListener('click', function(){ if (deskState.reflection.tabIndex < 4){ deskState.reflection.tabIndex++; renderReflection(); } });
+  document.getElementById('rfPageLeft').addEventListener('click', function(e){ if (!isInteractiveTarget(e)) handlePageTurnClick(true, 'reflection'); });
+  document.getElementById('rfPageRight').addEventListener('click', function(e){ if (!isInteractiveTarget(e)) handlePageTurnClick(false, 'reflection'); });
+
+  rfFontBtn.addEventListener('click', function(){
+    var isStd = document.getElementById('objReflection').classList.toggle('std');
+    rfFontBtn.setAttribute('aria-pressed', isStd ? 'true' : 'false');
+    rfFontBtn.textContent = isStd ? 'Use Handwriting Font' : 'Use Standard Font';
+  });
+
+  /* ---------- 4. SUMMARY OF LEARNING INDEX-CARD STACK ENGINE ---------- */
+  var indexCardDisplay = document.getElementById('indexCardDisplay');
+  var icCardCount = document.getElementById('icCardCount');
+  var icPrevCard = document.getElementById('icPrevCard');
+  var icNextCard = document.getElementById('icNextCard');
+
+  var TRAIL_DATA = [
+    { t:'The Iliad', s:'Ancient Greece &middot; Archetypal lens', p:'Heroes, fate, and honor &mdash; and how much of a person’s life is decided by forces larger than the person.' },
+    { t:'The Odyssey', s:'Ancient Greece &middot; Archetypal lens', p:'The long journey home. Monsters, temptations, and years of delay turn the voyage into an endurance of character.' },
+    { t:'Voice Out of the Whirlwind', s:'Ancient Israel &middot; Formalist lens', p:'Suffering, faith, and the limits of human understanding. The whirlwind teaches humility instead of simple explanation.' },
+    { t:'The Tale of Genji', s:'Heian Japan &middot; Historical lens', p:'Court life, beauty, and the sadness of things that do not last (mono no aware) &mdash; manners and rank shaping life.' },
+    { t:'Pride and Prejudice', s:'England, 1813 &middot; Feminist lens', p:'Marriage, class, and the choices of women. A woman’s “no” as standard and dignity; respect before money.' },
+    { t:'Les Misérables', s:'France, 1862 &middot; Marxist lens', p:'Poverty, justice, and mercy. How society crushes the vulnerable and blames them; mercy as real redemption.' },
+    { t:'To Kill a Mockingbird', s:'America, 1960 &middot; Historical lens', p:'Racism, courage, and empathy. The trial of Tom Robinson; learning justice through “walking in their shoes.”' }
+  ];
+
+  var activeTrailIndex = 0;
+
+  function renderLearned(){
+    var cardIdx = deskState.learned.cardIndex;
+    stageProgress.innerHTML = 'Summary of Learning &middot; <b>Card ' + (cardIdx + 1) + ' of 5</b>';
+    icCardCount.textContent = 'Card ' + (cardIdx + 1) + ' of 5';
+    icPrevCard.disabled = cardIdx === 0;
+    icNextCard.disabled = cardIdx === 4;
+
+    document.querySelectorAll('.ic-tab-btn').forEach(function(b, idx){
+      b.setAttribute('aria-selected', idx === cardIdx ? 'true' : 'false');
+    });
+
+    if (cardIdx === 0){
+      // Card 1: Overview
+      indexCardDisplay.innerHTML = '<div class="ic-card-body">' +
+        '<h3>Summary of Learning</h3>' +
+        '<p class="hand-note">&ldquo;In Great Books, I learned that literature is a window into the human experience. Through seven works from different times and places, I met people from ancient Greece, ancient Israel, Heian Japan, 19th-century England and France, and 20th-century America. Even though these stories come from different cultures, they talk about love, power, suffering, justice, pride, and the search for meaning.&rdquo;</p>' +
+        '<p style="font-size:12.5px;color:var(--ink-70);margin-top:1.1rem">&bull; Select any tab above or use Next Card to explore Periods &amp; Cultures, Literary Lenses, Literature &amp; Life, and Skills Developed.</p>' +
+      '</div>';
+    } else if (cardIdx === 1){
+      // Card 2: Periods & Cultures
+      var symsHtml = TRAIL_DATA.map(function(item, idx){
+        return '<li><button class="sym" type="button" data-trail-idx="' + idx + '" aria-pressed="' + (idx === activeTrailIndex ? 'true' : 'false') + '">' +
+          '<span class="sym-name">' + item.t + '</span>' +
+        '</button></li>';
+      }).join('');
+
+      var curTrail = TRAIL_DATA[activeTrailIndex];
+      indexCardDisplay.innerHTML = '<div class="ic-card-body">' +
+        '<h3>Periods and Cultures</h3>' +
+        '<p style="margin-bottom:.4rem">Understanding seven masterpieces across ancient and modern worlds:</p>' +
+        '<ul class="trail">' + symsHtml + '</ul>' +
+        '<div class="trail-note-box">' +
+          '<h4>' + curTrail.t + '</h4>' +
+          '<p class="page-sub" style="margin-bottom:.3rem">' + curTrail.s + '</p>' +
+          '<p>' + curTrail.p + '</p>' +
+        '</div>' +
+      '</div>';
+
+      document.querySelectorAll('[data-trail-idx]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          activeTrailIndex = parseInt(btn.getAttribute('data-trail-idx'), 10);
+          renderLearned();
+        });
+      });
+    } else if (cardIdx === 2){
+      // Card 3: Literary Lenses
+      indexCardDisplay.innerHTML = '<div class="ic-card-body">' +
+        '<h3>Knowledge and Use of Literary Lenses</h3>' +
+        '<p>I learned that one story can be read in many ways depending on the lens we use:</p>' +
+        '<div class="lenses-ic-list">' +
+          '<div class="lens-ic-box"><h5>Historical / Contextual</h5><p>Shapes of time, culture, and social rules. (Genji &amp; Mockingbird)</p></div>' +
+          '<div class="lens-ic-box"><h5>Feminist Lens</h5><p>Roles, limits, and choices of women; right to choose. (Pride &amp; Prejudice)</p></div>' +
+          '<div class="lens-ic-box"><h5>Marxist / Socioeconomic</h5><p>Class, wealth, labor, and systemic oppression. (Les Mis&eacute;rables)</p></div>' +
+          '<div class="lens-ic-box"><h5>Formalist Lens</h5><p>Structure, rhetorical questions, and imagery carrying meaning. (Job 38)</p></div>' +
+          '<div class="lens-ic-box"><h5>Archetypal / Mythological</h5><p>Universal story patterns, Hero’s Journey, death and rebirth. (The Iliad &amp; Odyssey)</p></div>' +
+        '</div>' +
+      '</div>';
+    } else if (cardIdx === 3){
+      // Card 4: Literature and Life
+      indexCardDisplay.innerHTML = '<div class="ic-card-body">' +
+        '<h3>Literature as a Reflection of Human Life</h3>' +
+        '<p class="hand-note" style="margin-top:1.2rem">&ldquo;I learned that stories are mirrors of people, beliefs, and societies. They show what people feared, valued, and hoped for in their time. Many problems in these stories, like unfair treatment, hardship, and the wish to belong, are still around today.&rdquo;</p>' +
+      '</div>';
+    } else if (cardIdx === 4){
+      // Card 5: Skills Developed
+      indexCardDisplay.innerHTML = '<div class="ic-card-body">' +
+        '<h3>Skills I Developed</h3>' +
+        '<p>Five habits of mind gained through Great Books:</p>' +
+        '<ul class="skills-ic-list">' +
+          '<li><b>01 Critical thinking</b><span>Asking &ldquo;why&rdquo; and not just &ldquo;what&rdquo; happened.</span></li>' +
+          '<li><b>02 Interpretation</b><span>Finding meaning behind symbols, actions, and words.</span></li>' +
+          '<li><b>03 Textual analysis</b><span>Supporting my ideas with direct textual evidence.</span></li>' +
+          '<li><b>04 Articulate writing</b><span>Explaining thoughts clearly and organizing well.</span></li>' +
+          '<li><b>05 Empathy</b><span>Understanding people whose lives are very different from mine.</span></li>' +
+        '</ul>' +
+      '</div>';
+    }
+  }
+
+  document.querySelectorAll('.ic-tab-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      deskState.learned.cardIndex = parseInt(b.getAttribute('data-ic-tab'), 10);
+      renderLearned();
+    });
+  });
+
+  icPrevCard.addEventListener('click', function(){ if (deskState.learned.cardIndex > 0){ deskState.learned.cardIndex--; renderLearned(); } });
+  icNextCard.addEventListener('click', function(){ if (deskState.learned.cardIndex < 4){ deskState.learned.cardIndex++; renderLearned(); } });
+
+  /* ---------- 7. REPAIRED "READ IN FULL" ENGINE ---------- */
+  var fullReader = document.getElementById('fullReader');
+  var readerTitle = document.getElementById('readerTitle');
+  var readerSub = document.getElementById('readerSub');
+  var readerBody = document.getElementById('readerBody');
+  var readerFoot = document.getElementById('readerFoot');
+  var readerKicker = document.getElementById('readerKicker');
+  var lastReaderFocus = null;
+
+  function openFullReaderForWork(workIdx){
+    var w = WORKS[workIdx];
+    if (!w) return;
+    lastReaderFocus = document.activeElement;
+
+    readerKicker.textContent = 'My Literary Analysis · Work ' + (workIdx + 1) + ' of 7';
+    readerTitle.textContent = w.title;
+    readerSub.textContent = w.author + ' · ' + w.lens;
+    readerBody.innerHTML = w.analysis.map(function(p){ return '<p>' + p + '</p>'; }).join('');
+    readerFoot.innerHTML = 'Sources: ' + w.refs.map(function(r){
+      return '<a href="' + r.u + '" target="_blank" rel="noopener noreferrer">' + r.l + '</a>';
+    }).join(' &middot; ');
+
+    fullReader.hidden = false;
+    document.body.style.overflow = 'hidden';
+    MLJ.focusEl(document.getElementById('readerBack'));
+    MLJ.announce('Full reading overlay opened for ' + w.title);
+  }
+
+  function closeFullReader(){
+    fullReader.hidden = true;
+    document.body.style.overflow = '';
+    if (lastReaderFocus && lastReaderFocus.focus) lastReaderFocus.focus();
+    MLJ.announce('Closed full reading overlay.');
+  }
+
+  readFullBtn.addEventListener('click', function(){
+    openFullReaderForWork(deskState.collection.workIndex);
+  });
+  document.getElementById('readerBack').addEventListener('click', closeFullReader);
+  document.getElementById('readerBack2').addEventListener('click', closeFullReader);
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      if (!fullReader.hidden) closeFullReader();
+      else if (!document.getElementById('allRfModal').hidden) {
+        document.getElementById('allRfModal').hidden = true;
+        document.body.style.overflow = '';
+      }
+    }
+  });
+
+  /* Keyboard Arrow Turns */
+  document.addEventListener('keydown', function(e){
+    if (deskStage.hidden || !fullReader.hidden) return;
+    var tag = (document.activeElement && document.activeElement.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+    if (e.key === 'ArrowLeft'){
+      handlePageTurnClick(true, deskState.activeObj);
+    } else if (e.key === 'ArrowRight'){
+      handlePageTurnClick(false, deskState.activeObj);
+    }
+  });
+
+  /* Dismiss Toast */
+  document.getElementById('dismissToast').addEventListener('click', function(){
+    document.getElementById('turnToast').hidden = true;
+  });
+
+  /* Reading Progress & Scrollspy */
+  var progressBar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? (window.scrollY / max) : 0;
+    progressBar.style.width = (p * 100).toFixed(2) + '%';
+    document.getElementById('siteNav').classList.toggle('is-stuck', window.scrollY > 12);
+  }, { passive:true });
+
+  /* Mobile Nav Toggle */
+  var navToggle = document.getElementById('navToggle');
+  var navMenu = document.getElementById('navMenu');
+  var navToggleLabel = document.getElementById('navToggleLabel');
+  navToggle.addEventListener('click', function(){
+    var open = navMenu.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggleLabel.textContent = open ? 'Close' : 'Menu';
+  });
+  navMenu.addEventListener('click', function(e){
+    if (e.target.closest('a')){
+      navMenu.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggleLabel.textContent = 'Menu';
+    }
+  });
+
+  /* Direct Anchor Jump Detection on Initial Load */
+  var initialHash = window.location.hash.slice(1);
+  if (['collection', 'masterpiece', 'learned', 'reflection'].indexOf(initialHash) !== -1){
+    setTimeout(function(){
+      openDeskObject(initialHash);
+      var desk = document.getElementById('desk');
+      if (desk) desk.scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  }
+})();
+</script>
+</body>
+</html>

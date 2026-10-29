@@ -1,0 +1,6 @@
+node_modules/
+*.backup.html
+verify_portfolio.js
+build_full_portfolio.js
+.vercel
+
